@@ -1,0 +1,35 @@
+<div class="page-width">
+  <header class="collection-hero">
+    <h1>{{ page_title }}</h1>
+    {%- if section.settings.intro != blank -%}<div class="text-muted" style="max-width:60ch">{{ section.settings.intro }}</div>{%- endif -%}
+  </header>
+
+  <div class="product-grid product-grid--3">
+    {%- for collection in collections -%}
+      {%- if collection.products_count > 0 -%}
+        <a class="product-card" href="{{ collection.url }}">
+          <div class="product-card__media">
+            {%- if collection.featured_image -%}
+              {{ collection.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400, 600, 800', sizes: '(min-width: 900px) 33vw, 100vw', alt: collection.title | escape, class: 'img-primary' }}
+            {%- else -%}
+              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__title">{{ collection.title }}</h3>
+            <div class="product-card__vendor">{{ collection.products_count }} item{% if collection.products_count != 1 %}s{% endif %}</div>
+          </div>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collections list",
+  "settings": [
+    { "type": "richtext", "id": "intro", "label": "Intro" }
+  ]
+}
+{% endschema %}

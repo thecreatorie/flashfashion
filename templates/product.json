@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "vendor" },
+        "title": { "type": "title" },
+        "price": { "type": "price" },
+        "form": { "type": "form" },
+        "description": { "type": "description" },
+        "meta": { "type": "meta", "settings": { "show_shipping": true, "show_returns": true, "show_secure": true } }
+      },
+      "block_order": ["vendor", "title", "price", "form", "description", "meta"]
+    }
+  },
+  "order": ["main"]
+}

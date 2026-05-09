@@ -1,0 +1,28 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "shop": {
+          "type": "menu",
+          "settings": { "heading": "Shop", "menu": "footer" }
+        },
+        "help": {
+          "type": "menu",
+          "settings": { "heading": "Help" }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Join the crew",
+            "subtext": "Drops, lookbooks, and festival edits straight to your inbox."
+          }
+        }
+      },
+      "block_order": ["shop", "help", "newsletter"]
+    }
+  },
+  "order": ["footer"]
+}

@@ -1,0 +1,38 @@
+<div class="page-width">
+  <article class="article">
+    {%- if article.image -%}
+      <div class="article__hero">
+        {{ article.image | image_url: width: 1600 | image_tag: loading: 'eager', widths: '600, 900, 1200, 1600', sizes: '(min-width: 900px) 720px, 100vw', alt: article.title | escape }}
+      </div>
+    {%- endif -%}
+    <div class="article__meta">{{ article.published_at | date: '%b %-d, %Y' }} · {{ article.author }}</div>
+    <h1 class="article__title">{{ article.title }}</h1>
+    <div class="article__body">{{ article.content }}</div>
+
+    {%- if blog.comments_enabled? and article.comments_enabled? -%}
+      <section class="mt-4">
+        <h3 class="mb-2">Comments ({{ article.comments_count }})</h3>
+        {%- for comment in article.comments -%}
+          <div class="article-card mb-2">
+            <div class="article-card__meta">{{ comment.author }} · {{ comment.created_at | date: '%b %-d, %Y' }}</div>
+            <div class="text-muted">{{ comment.content }}</div>
+          </div>
+        {%- endfor -%}
+        {% form 'new_comment', article %}
+          <div class="field"><label>Name</label><input type="text" name="comment[author]" required></div>
+          <div class="field"><label>Email</label><input type="email" name="comment[email]" required></div>
+          <div class="field"><label>Comment</label><textarea name="comment[body]" required></textarea></div>
+          <button type="submit" class="btn btn--primary">Post comment</button>
+          {%- if form.errors -%}<p class="form-status form-status--error">{{ form.errors | default_errors }}</p>{%- endif -%}
+        {% endform %}
+      </section>
+    {%- endif -%}
+  </article>
+</div>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": []
+}
+{% endschema %}

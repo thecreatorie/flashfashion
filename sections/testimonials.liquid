@@ -1,0 +1,56 @@
+<section class="section">
+  <div class="page-width">
+    <div class="section-head section-head--center">
+      {%- if section.settings.eyebrow != blank -%}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
+    </div>
+
+    <div class="testimonials" data-reveal>
+      {%- for block in section.blocks -%}
+        <article class="testimonial" {{ block.shopify_attributes }}>
+          <p class="testimonial__quote">{{ block.settings.quote }}</p>
+          <div class="testimonial__author">
+            {%- if block.settings.avatar -%}
+              <img src="{{ block.settings.avatar | image_url: width: 96 }}" alt="{{ block.settings.name | escape }}" width="48" height="48" style="border-radius:999px; width:48px; height:48px; object-fit:cover">
+            {%- endif -%}
+            <div>
+              <strong>{{ block.settings.name }}</strong>
+              {{ block.settings.handle }}
+            </div>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Worn by the crew" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Words from the playa" }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Quote",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "Held up through three nights of fire spinning and didn't snag once. Built different." },
+        { "type": "text", "id": "name", "label": "Name", "default": "Nyla R." },
+        { "type": "text", "id": "handle", "label": "Handle / role", "default": "Fire performer · Burning Man 2025" },
+        { "type": "image_picker", "id": "avatar", "label": "Avatar" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "quote" },
+      { "type": "quote", "settings": { "quote": "The reflective panels read perfectly under stage lights. My set went viral the next morning.", "name": "Marco D.", "handle": "DJ · EDC Las Vegas" } },
+      { "type": "quote", "settings": { "quote": "Finally, festival gear that doesn't fall apart by Sunday. These pieces are my new uniform.", "name": "Ari L.", "handle": "Hooper · Lightning in a Bottle" } }
+    ]
+  },
+  "presets": [{ "name": "Testimonials" }]
+}
+{% endschema %}

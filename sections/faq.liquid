@@ -1,0 +1,47 @@
+<section class="section">
+  <div class="page-width">
+    <div class="section-head section-head--center">
+      {%- if section.settings.eyebrow != blank -%}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
+    </div>
+
+    <div class="faq" data-reveal>
+      {%- for block in section.blocks -%}
+        <details {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question }}</summary>
+          <div class="faq__body">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQ" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Before you ask" }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Will it survive a week on the playa?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Yes — every piece is dust-tested and reinforced at high-stress seams. Hand wash on return, line dry, and it'll outlast the camp.</p>" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "qa", "settings": { "question": "Will it survive a week on the playa?", "answer": "<p>Yes. Reinforced seams, fade-resistant inks, and hardware rated for dust storms.</p>" } },
+      { "type": "qa", "settings": { "question": "How does sizing run?", "answer": "<p>True to size with stretch where it matters. Check each product page for our performer fit notes.</p>" } },
+      { "type": "qa", "settings": { "question": "Are the reflective panels real?", "answer": "<p>Yes — 3M-grade retroreflective material that lights up under camera flash and stage lighting.</p>" } },
+      { "type": "qa", "settings": { "question": "Do you ship internationally?", "answer": "<p>We ship worldwide. Duties calculated at checkout.</p>" } },
+      { "type": "qa", "settings": { "question": "Returns?", "answer": "<p>30-day returns on unworn, unwashed items with tags. Sale items are final.</p>" } }
+    ]
+  },
+  "presets": [{ "name": "FAQ" }]
+}
+{% endschema %}

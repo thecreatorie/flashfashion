@@ -1,0 +1,71 @@
+<header class="header" data-header role="banner">
+  <div class="page-width">
+    <div class="header__inner">
+      <button type="button" class="header__icon-btn header__menu-toggle" data-menu-toggle aria-label="Open menu">
+        {% render 'icon-menu' %}
+      </button>
+
+      {%- if section.settings.menu != blank -%}
+        <nav class="header__nav" aria-label="Primary">
+          {%- for link in section.settings.menu.links -%}
+            <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+          {%- endfor -%}
+        </nav>
+      {%- endif -%}
+
+      <a class="header__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+        {%- if settings.logo != blank -%}
+          {{ settings.logo | image_url: width: settings.logo_width | times: 2 | image_tag:
+            loading: 'eager',
+            width: settings.logo_width,
+            height: settings.logo_width | divided_by: settings.logo.aspect_ratio | round,
+            alt: shop.name | escape
+          }}
+        {%- else -%}
+          <span>{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+
+      <div class="header__actions">
+        <a href="{{ routes.search_url }}" class="header__icon-btn" aria-label="Search">{% render 'icon-search' %}</a>
+        {%- if shop.customer_accounts_enabled -%}
+          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon-btn" aria-label="Account">{% render 'icon-account' %}</a>
+        {%- endif -%}
+        <a href="{{ routes.cart_url }}" class="header__icon-btn" data-cart-open aria-label="Cart">
+          {% render 'icon-cart' %}
+          <span class="cart-count" data-cart-count{% if cart.item_count == 0 %} hidden{% endif %}>{{ cart.item_count }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" data-mobile-menu aria-hidden="true">
+    <div class="mobile-menu__panel">
+      <button type="button" class="header__icon-btn mobile-menu__close" data-menu-close aria-label="Close menu">{% render 'icon-close' %}</button>
+      {%- if section.settings.menu != blank -%}
+        <nav class="mobile-menu__nav" aria-label="Mobile primary">
+          {%- for link in section.settings.menu.links -%}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {%- endfor -%}
+        </nav>
+      {%- endif -%}
+      <div class="mt-4">
+        {% render 'social-icons' %}
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,73 @@
+<section class="hero hero--{{ section.settings.alignment }}" {% if section.settings.bg_color %}style="background:{{ section.settings.bg_color }}"{% endif %}>
+  <div class="hero__media">
+    {%- if section.settings.video_url != blank -%}
+      <video src="{{ section.settings.video_url }}" autoplay muted loop playsinline {% if section.settings.image %}poster="{{ section.settings.image | image_url: width: 1600 }}"{% endif %}></video>
+    {%- elsif section.settings.image -%}
+      {{ section.settings.image | image_url: width: 2000 | image_tag:
+        loading: 'eager',
+        widths: '600, 900, 1200, 1600, 2000',
+        sizes: '100vw',
+        alt: section.settings.image.alt | default: section.settings.heading | escape
+      }}
+    {%- else -%}
+      <div style="background:var(--gradient-holo); width:100%; height:100%;"></div>
+    {%- endif -%}
+  </div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content" data-reveal>
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="eyebrow">{{ section.settings.eyebrow }}</div>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h1 class="hero__title">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="hero__subtitle">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+    {%- if section.settings.button_label != blank or section.settings.button_label_2 != blank -%}
+      <div class="hero__actions">
+        {%- if section.settings.button_label != blank -%}
+          <a href="{{ section.settings.button_link | default: '#' }}" class="btn btn--primary">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+        {%- if section.settings.button_label_2 != blank -%}
+          <a href="{{ section.settings.button_link_2 | default: '#' }}" class="btn btn--secondary">{{ section.settings.button_label_2 }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.show_scroll -%}
+    <span class="hero__scroll">Scroll</span>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Background image" },
+    { "type": "url", "id": "video_url", "label": "Background video URL", "info": "MP4 hosted via Shopify Files" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Spring drop / 2026" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "BURN BRIGHTER" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Festival armor for performers, fire dancers and the night-creatures of the playa. Made to move, made to glow." },
+    { "type": "text", "id": "button_label", "label": "Primary button", "default": "Shop the drop" },
+    { "type": "url", "id": "button_link", "label": "Primary link" },
+    { "type": "text", "id": "button_label_2", "label": "Secondary button", "default": "Lookbook" },
+    { "type": "url", "id": "button_link_2", "label": "Secondary link" },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Content alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left"
+    },
+    { "type": "checkbox", "id": "show_scroll", "label": "Show scroll cue", "default": true },
+    { "type": "color", "id": "bg_color", "label": "Fallback background", "default": "#08080F" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

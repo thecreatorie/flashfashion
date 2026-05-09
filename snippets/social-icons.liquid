@@ -1,0 +1,26 @@
+{%- liquid
+  assign has_socials = false
+  if settings.social_instagram != blank or settings.social_tiktok != blank or settings.social_youtube != blank or settings.social_facebook != blank or settings.social_twitter != blank
+    assign has_socials = true
+  endif
+-%}
+
+{%- if has_socials -%}
+  <div class="footer__social">
+    {%- if settings.social_instagram != blank -%}
+      <a href="{{ settings.social_instagram }}" aria-label="Instagram" rel="noopener" target="_blank">{% render 'icon-instagram' %}</a>
+    {%- endif -%}
+    {%- if settings.social_tiktok != blank -%}
+      <a href="{{ settings.social_tiktok }}" aria-label="TikTok" rel="noopener" target="_blank">{% render 'icon-tiktok' %}</a>
+    {%- endif -%}
+    {%- if settings.social_youtube != blank -%}
+      <a href="{{ settings.social_youtube }}" aria-label="YouTube" rel="noopener" target="_blank">{% render 'icon-youtube' %}</a>
+    {%- endif -%}
+    {%- if settings.social_facebook != blank -%}
+      <a href="{{ settings.social_facebook }}" aria-label="Facebook" rel="noopener" target="_blank">{% render 'icon-facebook' %}</a>
+    {%- endif -%}
+    {%- if settings.social_twitter != blank -%}
+      <a href="{{ settings.social_twitter }}" aria-label="Twitter / X" rel="noopener" target="_blank">{% render 'icon-twitter' %}</a>
+    {%- endif -%}
+  </div>
+{%- endif -%}

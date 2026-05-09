@@ -1,0 +1,35 @@
+<div class="page-width">
+  <div class="auth-card">
+    <h1>Sign in</h1>
+    <p>Welcome back to Flash Fashion.</p>
+
+    {% form 'customer_login', novalidate: 'novalidate' %}
+      {%- if form.errors -%}
+        <div class="form-status form-status--error">{{ form.errors | default_errors }}</div>
+      {%- endif -%}
+      <div class="field">
+        <label for="CustomerEmail">Email</label>
+        <input type="email" name="customer[email]" id="CustomerEmail" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="CustomerPassword">Password</label>
+        <input type="password" name="customer[password]" id="CustomerPassword" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn--primary btn--full">Sign in</button>
+      <a href="#recover" onclick="document.querySelector('#recover-form').toggleAttribute('hidden'); return false;" style="font-size:0.85rem; text-decoration:underline; text-underline-offset:3px;">Forgot password?</a>
+    {% endform %}
+
+    <div id="recover-form" hidden style="margin-top:1.5rem;">
+      <h3 class="mb-2" style="font-size:1.1rem">Reset your password</h3>
+      {% form 'recover_customer_password' %}
+        {%- if form.posted_successfully? -%}
+          <p class="form-status form-status--success">Check your inbox for reset instructions.</p>
+        {%- endif -%}
+        <div class="field"><label>Email</label><input type="email" name="email" autocomplete="email" required></div>
+        <button type="submit" class="btn btn--ghost btn--full">Send reset link</button>
+      {% endform %}
+    </div>
+
+    <p class="auth-card__alt">No account yet? <a href="{{ routes.account_register_url }}">Create one</a></p>
+  </div>
+</div>

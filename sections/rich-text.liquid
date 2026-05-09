@@ -1,0 +1,62 @@
+<section class="section">
+  <div class="page-width">
+    <div class="rich-text" data-reveal>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2 {{ block.shopify_attributes }}>{{ block.settings.heading }}</h2>
+          {%- when 'text' -%}
+            <div {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+          {%- when 'button' -%}
+            <div class="mt-2" {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.link | default: '#' }}" class="btn btn--primary">{{ block.settings.label }}</a>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rich text",
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Made by performers, for performers." }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Flash Fashion was born backstage at a desert festival in 2022. Today our pieces show up everywhere from EDC mainstages to deep-playa fire circles.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Read our story" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "heading" },
+      { "type": "text" }
+    ]
+  },
+  "presets": [{ "name": "Rich text" }]
+}
+{% endschema %}

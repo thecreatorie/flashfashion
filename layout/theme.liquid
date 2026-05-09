@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="theme-color" content="{{ settings.color_background }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+
+    <title>
+      {{ page_title }}{% if current_tags %} &ndash; {{ 'general.meta.tags' | t: tags: current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    {%- liquid
+      assign font_heading = settings.font_heading
+      assign font_body = settings.font_body
+      assign font_heading_bold = font_heading | font_modify: 'weight', 'bolder'
+      assign font_body_bold = font_body | font_modify: 'weight', 'bolder'
+      assign font_body_italic = font_body | font_modify: 'style', 'italic'
+    -%}
+
+    {{ font_heading | font_face: font_display: 'swap' }}
+    {{ font_body | font_face: font_display: 'swap' }}
+    {{ font_body_bold | font_face: font_display: 'swap' }}
+    {{ font_body_italic | font_face: font_display: 'swap' }}
+
+    <style>
+      :root {
+        --color-bg: {{ settings.color_background }};
+        --color-surface: {{ settings.color_surface }};
+        --color-fg: {{ settings.color_foreground }};
+        --color-muted: {{ settings.color_muted }};
+        --color-border: {{ settings.color_border }};
+        --color-accent: {{ settings.color_accent_primary }};
+        --color-accent-2: {{ settings.color_accent_secondary }};
+        --color-accent-3: {{ settings.color_accent_tertiary }};
+        --color-accent-rgb: {{ settings.color_accent_primary | color_extract: 'red' }}, {{ settings.color_accent_primary | color_extract: 'green' }}, {{ settings.color_accent_primary | color_extract: 'blue' }};
+        --color-bg-rgb: {{ settings.color_background | color_extract: 'red' }}, {{ settings.color_background | color_extract: 'green' }}, {{ settings.color_background | color_extract: 'blue' }};
+        --gradient-holo: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-2) 50%, var(--color-accent-3) 100%);
+        --font-heading: {{ font_heading.family }}, {{ font_heading.fallback_families }};
+        --font-body: {{ font_body.family }}, {{ font_body.fallback_families }};
+        --heading-weight: {{ font_heading.weight }};
+        --body-weight: {{ font_body.weight }};
+        --heading-scale: {{ settings.heading_scale | divided_by: 100.0 }};
+        --body-scale: {{ settings.body_scale | divided_by: 100.0 }};
+        --heading-transform: {% if settings.uppercase_headings %}uppercase{% else %}none{% endif %};
+        --page-width: {{ settings.page_width }}px;
+        --section-spacing: {{ settings.section_spacing }}px;
+      }
+    </style>
+
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+    <script>document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js');</script>
+
+    {{ content_for_header }}
+  </head>
+
+  <body class="template-{{ template.name | handle }}{% if customer %} customer-logged-in{% endif %}">
+    <a class="skip-to-content" href="#MainContent">{{ 'accessibility.skip_to_content' | t }}</a>
+
+    {% sections 'header-group' %}
+
+    <main id="MainContent" class="main" role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    {%- if settings.cart_type == 'drawer' -%}
+      {% render 'cart-drawer' %}
+    {%- endif -%}
+
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+    <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
+    <script src="{{ 'product-form.js' | asset_url }}" defer></script>
+  </body>
+</html>

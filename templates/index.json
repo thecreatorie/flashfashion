@@ -1,0 +1,92 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "Spring drop / 2026",
+        "heading": "BURN BRIGHTER",
+        "subheading": "Festival armor for performers, fire dancers and the night-creatures of the playa. Made to move, made to glow.",
+        "button_label": "Shop the drop",
+        "button_link": "shopify://collections/all",
+        "button_label_2": "Lookbook",
+        "alignment": "left",
+        "show_scroll": true
+      }
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "Latest drop",
+        "heading": "Now glowing",
+        "intro": "Reflective, breathable, performer-tested.",
+        "product_limit": 8,
+        "columns": "4"
+      }
+    },
+    "image-text": {
+      "type": "image-with-text",
+      "settings": {
+        "media_position": "left",
+        "eyebrow": "Performers first",
+        "heading": "Engineered for the stage, the playa, and everything in between.",
+        "text": "<p>Every Flash Fashion piece is designed by and tested with working performers — fire dancers, hoopers, DJs, drag artists. Reflective, breathable, and built to glow under blacklight or moonlight.</p>",
+        "button_label": "Our story",
+        "button_link": "shopify://pages/about"
+      }
+    },
+    "lookbook": {
+      "type": "lookbook",
+      "blocks": {
+        "tile-1": { "type": "tile", "settings": { "size": "lg", "caption": "Crew · 01" } },
+        "tile-2": { "type": "tile", "settings": { "size": "md", "caption": "Crew · 02" } },
+        "tile-3": { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 03" } },
+        "tile-4": { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 04" } },
+        "tile-5": { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 05" } }
+      },
+      "block_order": ["tile-1", "tile-2", "tile-3", "tile-4", "tile-5"],
+      "settings": {
+        "eyebrow": "Lookbook 2026",
+        "heading": "Visions from the desert",
+        "intro": "Three days, three performers, one moonrise."
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "q-1": { "type": "quote", "settings": { "quote": "Held up through three nights of fire spinning and didn't snag once. Built different.", "name": "Nyla R.", "handle": "Fire performer · Burning Man 2025" } },
+        "q-2": { "type": "quote", "settings": { "quote": "The reflective panels read perfectly under stage lights. My set went viral the next morning.", "name": "Marco D.", "handle": "DJ · EDC Las Vegas" } },
+        "q-3": { "type": "quote", "settings": { "quote": "Finally, festival gear that doesn't fall apart by Sunday. These pieces are my new uniform.", "name": "Ari L.", "handle": "Hooper · Lightning in a Bottle" } }
+      },
+      "block_order": ["q-1", "q-2", "q-3"],
+      "settings": {
+        "eyebrow": "Worn by the crew",
+        "heading": "Words from the playa"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "f-1": { "type": "qa", "settings": { "question": "Will it survive a week on the playa?", "answer": "<p>Yes. Reinforced seams, fade-resistant inks, and hardware rated for dust storms.</p>" } },
+        "f-2": { "type": "qa", "settings": { "question": "How does sizing run?", "answer": "<p>True to size with stretch where it matters. Check each product page for our performer fit notes.</p>" } },
+        "f-3": { "type": "qa", "settings": { "question": "Are the reflective panels real?", "answer": "<p>Yes — 3M-grade retroreflective material that lights up under camera flash and stage lighting.</p>" } },
+        "f-4": { "type": "qa", "settings": { "question": "Do you ship internationally?", "answer": "<p>We ship worldwide. Duties calculated at checkout.</p>" } },
+        "f-5": { "type": "qa", "settings": { "question": "Returns?", "answer": "<p>30-day returns on unworn, unwashed items with tags. Sale items are final.</p>" } }
+      },
+      "block_order": ["f-1", "f-2", "f-3", "f-4", "f-5"],
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Before you ask"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Light it up",
+        "heading": "Drops every full moon.",
+        "text": "Be first on lookbooks, restocks, and members-only festival edits.",
+        "button_label": "Subscribe"
+      }
+    }
+  },
+  "order": ["hero", "featured", "image-text", "lookbook", "testimonials", "faq", "newsletter"]
+}

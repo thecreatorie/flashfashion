@@ -1,0 +1,84 @@
+{%- comment -%}
+  Renders a product card.
+  Required: product
+  Optional: image_ratio (portrait, square, landscape), show_vendor, show_second_image, show_quick_add
+{%- endcomment -%}
+
+{%- liquid
+  assign image_ratio = image_ratio | default: settings.card_image_ratio
+  if show_vendor == nil
+    assign show_vendor = settings.card_show_vendor
+  endif
+  if show_second_image == nil
+    assign show_second_image = settings.card_show_second_image
+  endif
+  if show_quick_add == nil
+    assign show_quick_add = settings.card_quick_add
+  endif
+
+  assign primary_image = product.featured_image
+  assign secondary_image = product.images[1]
+  assign on_sale = false
+  if product.compare_at_price > product.price
+    assign on_sale = true
+  endif
+  assign first_available = product.selected_or_first_available_variant
+-%}
+
+<article class="product-card" data-ratio="{{ image_ratio }}">
+  <a class="product-card__media" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+    <div class="product-card__badges">
+      {%- if on_sale -%}
+        <span class="badge badge--sale">Sale</span>
+      {%- endif -%}
+      {%- if product.tags contains 'new' -%}
+        <span class="badge badge--new">New</span>
+      {%- endif -%}
+      {%- unless product.available -%}
+        <span class="badge badge--soldout">Sold out</span>
+      {%- endunless -%}
+    </div>
+
+    {%- if primary_image -%}
+      {{ primary_image
+        | image_url: width: 800
+        | image_tag:
+          loading: 'lazy',
+          widths: '300, 400, 600, 800, 1000',
+          sizes: '(min-width: 1100px) 25vw, (min-width: 750px) 33vw, 50vw',
+          class: 'img-primary',
+          alt: primary_image.alt | default: product.title | escape
+      }}
+    {%- else -%}
+      <div class="img-primary placeholder">{{ 'product-1' | placeholder_svg_tag }}</div>
+    {%- endif -%}
+
+    {%- if show_second_image and secondary_image -%}
+      {{ secondary_image
+        | image_url: width: 800
+        | image_tag:
+          loading: 'lazy',
+          widths: '300, 400, 600, 800',
+          sizes: '(min-width: 1100px) 25vw, (min-width: 750px) 33vw, 50vw',
+          class: 'img-secondary',
+          alt: secondary_image.alt | default: product.title | escape
+      }}
+    {%- endif -%}
+  </a>
+
+  {%- if show_quick_add and product.available and first_available.id -%}
+    <div class="product-card__quick-add">
+      <button type="button" class="btn btn--primary btn--sm btn--full" data-quick-add data-variant-id="{{ first_available.id }}">
+        Quick add
+      </button>
+    </div>
+  {%- endif -%}
+
+  <div class="product-card__info">
+    {%- if show_vendor and product.vendor -%}
+      <div class="product-card__vendor">{{ product.vendor }}</div>
+    {%- endif -%}
+    <h3 class="product-card__title"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+    <div class="product-card__price">{% render 'price', product: product %}</div>
+  </div>
+</article>

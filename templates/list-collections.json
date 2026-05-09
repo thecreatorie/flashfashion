@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "intro": "<p>Every drop, every capsule. Pick your weapon.</p>"
+      }
+    }
+  },
+  "order": ["main"]
+}

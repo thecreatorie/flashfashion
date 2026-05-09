@@ -1,0 +1,56 @@
+<div class="page-width section">
+  <header class="text-center">
+    <span class="eyebrow">Search</span>
+    <h1>Find your fit</h1>
+  </header>
+
+  <form action="{{ routes.search_url }}" method="get" class="search-form" role="search">
+    <input type="search" name="q" placeholder="Search products…" value="{{ search.terms | escape }}" aria-label="Search">
+    <button type="submit" class="btn btn--primary">Search</button>
+  </form>
+
+  {%- if search.performed -%}
+    <p class="search-results__count">
+      {{ search.results_count }} result{% if search.results_count != 1 %}s{% endif %} for "<strong>{{ search.terms | escape }}</strong>"
+    </p>
+    {%- if search.results_count > 0 -%}
+      {%- paginate search.results by 24 -%}
+        <div class="product-grid product-grid--4">
+          {%- for item in search.results -%}
+            {%- case item.object_type -%}
+              {%- when 'product' -%}
+                {% render 'product-card', product: item %}
+              {%- when 'article' -%}
+                <a class="article-card" href="{{ item.url }}">
+                  <div class="article-card__media">
+                    {%- if item.image -%}{{ item.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: item.title | escape }}{%- endif -%}
+                  </div>
+                  <div class="article-card__meta">Article</div>
+                  <h3 class="article-card__title">{{ item.title }}</h3>
+                </a>
+              {%- when 'page' -%}
+                <a class="article-card" href="{{ item.url }}">
+                  <div class="article-card__meta">Page</div>
+                  <h3 class="article-card__title">{{ item.title }}</h3>
+                </a>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}
+          <nav class="pagination">
+            {%- for part in paginate.parts -%}
+              {%- if part.is_link -%}<a href="{{ part.url }}">{{ part.title }}</a>{%- else -%}<span class="current">{{ part.title }}</span>{%- endif -%}
+            {%- endfor -%}
+          </nav>
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Search",
+  "settings": []
+}
+{% endschema %}

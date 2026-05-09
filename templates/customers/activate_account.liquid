@@ -1,0 +1,15 @@
+<div class="page-width">
+  <div class="auth-card">
+    <h1>Activate account</h1>
+    <p>Set a password to activate your Flash Fashion account.</p>
+    {% form 'activate_customer_password' %}
+      {%- if form.errors -%}<div class="form-status form-status--error">{{ form.errors | default_errors }}</div>{%- endif -%}
+      <div class="field"><label>Password</label><input type="password" name="customer[password]" autocomplete="new-password" required></div>
+      <div class="field"><label>Confirm password</label><input type="password" name="customer[password_confirmation]" autocomplete="new-password" required></div>
+      <div class="flex gap-1">
+        <button type="submit" class="btn btn--primary btn--full">Activate</button>
+        <button type="submit" name="decline" class="btn btn--ghost btn--full">Decline</button>
+      </div>
+    {% endform %}
+  </div>
+</div>

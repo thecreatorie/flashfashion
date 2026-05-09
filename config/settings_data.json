@@ -1,0 +1,42 @@
+{
+  "current": {
+    "logo_width": 160,
+    "color_background": "#08080F",
+    "color_surface": "#12121C",
+    "color_foreground": "#FFFFFF",
+    "color_muted": "#9A9AAE",
+    "color_border": "#26263A",
+    "color_accent_primary": "#FF2D87",
+    "color_accent_secondary": "#00F0FF",
+    "color_accent_tertiary": "#C6FF00",
+    "enable_holographic": true,
+    "font_heading": "archivo_black_n9",
+    "font_body": "inter_n4",
+    "heading_scale": 110,
+    "body_scale": 100,
+    "uppercase_headings": true,
+    "page_width": 1500,
+    "section_spacing": 96,
+    "cart_type": "drawer",
+    "show_cart_note": true,
+    "card_image_ratio": "portrait",
+    "card_show_second_image": true,
+    "card_show_vendor": false,
+    "card_quick_add": true,
+    "social_instagram": "",
+    "social_tiktok": "",
+    "social_youtube": "",
+    "social_facebook": "",
+    "social_twitter": ""
+  },
+  "presets": {
+    "Flash Fashion": {
+      "color_background": "#08080F",
+      "color_surface": "#12121C",
+      "color_foreground": "#FFFFFF",
+      "color_accent_primary": "#FF2D87",
+      "color_accent_secondary": "#00F0FF",
+      "color_accent_tertiary": "#C6FF00"
+    }
+  }
+}

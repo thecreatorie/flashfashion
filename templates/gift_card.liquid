@@ -1,0 +1,23 @@
+{% layout 'theme' %}
+
+<div class="page-width section">
+  <div style="max-width:520px; margin: 2rem auto; text-align:center; background: var(--color-surface); border: 1px solid var(--color-border); padding: 2.5rem; border-radius: 8px;">
+    <span class="eyebrow">Gift card</span>
+    <h1 class="text-gradient mt-2">{{ gift_card.balance | money }}</h1>
+    {% if gift_card.expired %}
+      <p class="form-status form-status--error mt-2">Expired on {{ gift_card.expires_on | date: format: 'date' }}</p>
+    {% elsif gift_card.expires_on %}
+      <p class="text-muted mt-2">Expires {{ gift_card.expires_on | date: format: 'date' }}</p>
+    {% endif %}
+    <div style="margin: 2rem auto; max-width: 320px; padding: 1.5rem; border: 1px dashed var(--color-border); border-radius: 8px;">
+      {% if gift_card.qr_identifier_url %}
+        <img src="{{ gift_card.qr_identifier_url }}" alt="QR code" width="180" height="180" style="margin: 0 auto 1rem;">
+      {% endif %}
+      <code style="font-family: monospace; font-size: 1.1rem; letter-spacing: 0.1em; word-break: break-all;">{{ gift_card.code | format_code }}</code>
+    </div>
+    <a class="btn btn--primary" href="{{ shop.url }}">Redeem at {{ shop.name }}</a>
+    <p class="text-muted mt-2" style="font-size: 0.85rem;">
+      <a href="javascript:window.print()" style="text-decoration: underline; text-underline-offset: 3px;">Print this gift card</a>
+    </p>
+  </div>
+</div>

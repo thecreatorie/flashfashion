@@ -1,0 +1,61 @@
+<div class="page-width section">
+  <h1 class="mb-4">Your bag</h1>
+
+  {%- if cart.item_count == 0 -%}
+    <div class="empty-state">
+      <p>Your bag is empty.</p>
+      <a class="btn btn--primary" href="{{ routes.collections_url }}">Shop the collection</a>
+    </div>
+  {%- else -%}
+    <form action="{{ routes.cart_url }}" method="post" novalidate>
+      <div class="cart-page__items">
+        {%- for item in cart.items -%}
+          <div class="cart-page__row" data-line-key="{{ item.key }}">
+            <div class="cart-page__media">
+              {%- if item.image -%}
+                <a href="{{ item.url }}">{{ item.image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '120,240', alt: item.product.title | escape, width: 120, height: 160 }}</a>
+              {%- endif -%}
+            </div>
+            <div>
+              <a href="{{ item.url }}"><strong>{{ item.product.title }}</strong></a>
+              {%- unless item.product_has_only_default_variant -%}<div class="text-muted" style="font-size:0.85rem">{{ item.variant.title }}</div>{%- endunless -%}
+              <div class="text-muted" style="font-size:0.85rem">{{ item.original_price | money }} each</div>
+              <button type="button" class="cart-line__remove mt-2" data-line-remove="{{ item.key }}">Remove</button>
+            </div>
+            <div class="qty">
+              <button type="button" data-qty-dec aria-label="Decrease">−</button>
+              <input type="number" name="updates[]" min="0" value="{{ item.quantity }}" data-line-qty="{{ item.key }}">
+              <button type="button" data-qty-inc aria-label="Increase">+</button>
+            </div>
+            <div class="cart-page__line-total">
+              <strong>{{ item.final_line_price | money }}</strong>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="cart-page__totals">
+        {%- if settings.show_cart_note -%}
+          <div class="field">
+            <label for="cart-note-page">Order note</label>
+            <textarea id="cart-note-page" name="note">{{ cart.note }}</textarea>
+          </div>
+        {%- endif -%}
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span class="eyebrow">Subtotal</span>
+          <span style="font-family:var(--font-heading); font-size:1.4rem">{{ cart.total_price | money }}</span>
+        </div>
+        <p class="text-muted" style="font-size:0.8rem">Shipping &amp; taxes calculated at checkout.</p>
+        <button type="submit" name="checkout" class="btn btn--primary btn--full">Checkout</button>
+        <button type="submit" name="update" class="btn btn--ghost btn--full btn--sm">Update</button>
+      </div>
+    </form>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": []
+}
+{% endschema %}

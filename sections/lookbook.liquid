@@ -1,0 +1,74 @@
+<section class="section">
+  <div class="page-width">
+    <div class="section-head section-head--center">
+      {%- if section.settings.eyebrow != blank -%}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
+      {%- if section.settings.intro != blank -%}<p class="section-head__intro">{{ section.settings.intro }}</p>{%- endif -%}
+    </div>
+
+    <div class="lookbook" data-reveal>
+      {%- for block in section.blocks -%}
+        {%- assign size_class = 'lookbook__item--' | append: block.settings.size -%}
+        <a class="lookbook__item {{ size_class }}" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.image -%}
+            {{ block.settings.image | image_url: width: 1400 | image_tag:
+              loading: 'lazy',
+              widths: '600, 900, 1200, 1400',
+              sizes: '(min-width: 800px) 50vw, 100vw',
+              alt: block.settings.caption | default: block.settings.image.alt | escape
+            }}
+          {%- else -%}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+          {%- if block.settings.caption != blank -%}
+            <div class="lookbook__caption">{{ block.settings.caption }}</div>
+          {%- endif -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lookbook",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Lookbook 2026" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Visions from the desert" },
+    { "type": "textarea", "id": "intro", "label": "Intro" }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Tile",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "caption", "label": "Caption" },
+        { "type": "url", "id": "link", "label": "Link" },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size",
+          "options": [
+            { "value": "lg", "label": "Large (8 cols)" },
+            { "value": "md", "label": "Medium (4 cols)" },
+            { "value": "sm", "label": "Small (4 cols)" }
+          ],
+          "default": "md"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "tile", "settings": { "size": "lg", "caption": "Crew · 01" } },
+      { "type": "tile", "settings": { "size": "md", "caption": "Crew · 02" } },
+      { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 03" } },
+      { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 04" } },
+      { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 05" } }
+    ]
+  },
+  "presets": [{ "name": "Lookbook" }]
+}
+{% endschema %}
