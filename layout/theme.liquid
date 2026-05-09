@@ -31,10 +31,12 @@
       assign font_body_italic = font_body | font_modify: 'style', 'italic'
     -%}
 
-    {%- if font_heading -%}{{ font_heading | font_face: font_display: 'swap' }}{%- endif -%}
-    {%- if font_body -%}{{ font_body | font_face: font_display: 'swap' }}{%- endif -%}
-    {%- if font_body_bold -%}{{ font_body_bold | font_face: font_display: 'swap' }}{%- endif -%}
-    {%- if font_body_italic -%}{{ font_body_italic | font_face: font_display: 'swap' }}{%- endif -%}
+    <style>
+      {%- if font_heading -%}{{ font_heading | font_face: font_display: 'swap' }}{%- endif -%}
+      {%- if font_body -%}{{ font_body | font_face: font_display: 'swap' }}{%- endif -%}
+      {%- if font_body_bold -%}{{ font_body_bold | font_face: font_display: 'swap' }}{%- endif -%}
+      {%- if font_body_italic -%}{{ font_body_italic | font_face: font_display: 'swap' }}{%- endif -%}
+    </style>
 
     <style>
       :root {
