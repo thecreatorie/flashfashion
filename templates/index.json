@@ -78,6 +78,7 @@
     "editorial-1": {
       "type": "image-with-text",
       "settings": {
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/25f0a1d6fd514cdabd9b2523818fab06.mp4",
         "media_position": "left",
         "eyebrow": "In motion",
         "heading": "<p>Silk that<br><em>moves with you.</em></p>",
