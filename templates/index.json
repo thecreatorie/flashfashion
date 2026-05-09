@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "hero": {
@@ -24,45 +15,13 @@
     "ticker": {
       "type": "ticker",
       "blocks": {
-        "p1": {
-          "type": "phrase",
-          "settings": {
-            "text": "Hand-sewn silk"
-          }
-        },
-        "p2": {
-          "type": "phrase",
-          "settings": {
-            "text": "UV reactive"
-          }
-        },
-        "p3": {
-          "type": "phrase",
-          "settings": {
-            "text": "Holographic"
-          }
-        },
-        "p4": {
-          "type": "phrase",
-          "settings": {
-            "text": "Firesafe wear"
-          }
-        },
-        "p5": {
-          "type": "phrase",
-          "settings": {
-            "text": "Festival ready"
-          }
-        }
+        "p1": { "type": "phrase", "settings": { "text": "Hand-sewn silk" } },
+        "p2": { "type": "phrase", "settings": { "text": "UV reactive" } },
+        "p3": { "type": "phrase", "settings": { "text": "Holographic" } },
+        "p4": { "type": "phrase", "settings": { "text": "Firesafe wear" } },
+        "p5": { "type": "phrase", "settings": { "text": "Festival ready" } }
       },
-      "block_order": [
-        "p1",
-        "p2",
-        "p3",
-        "p4",
-        "p5"
-      ],
-      "settings": {}
+      "block_order": ["p1", "p2", "p3", "p4", "p5"]
     },
     "silk-fans": {
       "type": "featured-collection",
@@ -129,45 +88,12 @@
     "ribbon": {
       "type": "ribbon",
       "blocks": {
-        "f1": {
-          "type": "feat",
-          "settings": {
-            "icon": "🪡",
-            "heading": "Hand-sewn",
-            "text": "Every silk fan stitched by hand. No two are exactly alike."
-          }
-        },
-        "f2": {
-          "type": "feat",
-          "settings": {
-            "icon": "✦",
-            "heading": "Same grip",
-            "text": "Slip them over your fire fans — same Russian grip, in silk."
-          }
-        },
-        "f3": {
-          "type": "feat",
-          "settings": {
-            "icon": "⚡",
-            "heading": "UV + Holo",
-            "text": "Reactive under blacklight. Holographic crowns shift color with every angle."
-          }
-        },
-        "f4": {
-          "type": "feat",
-          "settings": {
-            "icon": "🛡️",
-            "heading": "Firesafe",
-            "text": "Slitweave bodysuits in natural fibers. Built for performers under fire."
-          }
-        }
+        "f1": { "type": "feat", "settings": { "icon": "🪡", "heading": "Hand-sewn", "text": "Every silk fan stitched by hand. No two are exactly alike." } },
+        "f2": { "type": "feat", "settings": { "icon": "✦", "heading": "Same grip", "text": "Slip them over your fire fans — same Russian grip, in silk." } },
+        "f3": { "type": "feat", "settings": { "icon": "⚡", "heading": "UV + Holo", "text": "Reactive under blacklight. Holographic crowns shift color with every angle." } },
+        "f4": { "type": "feat", "settings": { "icon": "🛡️", "heading": "Firesafe", "text": "Slitweave bodysuits in natural fibers. Built for performers under fire." } }
       },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
-      ],
+      "block_order": ["f1", "f2", "f3", "f4"],
       "settings": {
         "eyebrow": "Why Flash",
         "heading": "<p>Festival-grade.<br><em>Stage-ready.</em></p>"
@@ -183,16 +109,5 @@
       }
     }
   },
-  "order": [
-    "hero",
-    "ticker",
-    "silk-fans",
-    "editorial-1",
-    "non-silk",
-    "editorial-2",
-    "slitweave",
-    "veils",
-    "ribbon",
-    "newsletter"
-  ]
+  "order": ["hero", "ticker", "silk-fans", "editorial-1", "non-silk", "editorial-2", "slitweave", "veils", "ribbon", "newsletter"]
 }
