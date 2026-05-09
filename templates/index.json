@@ -1,10 +1,21 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
+        "bg_video_url": "",
+        "media_video_url": "https://www.instagram.com/p/DTfE6ckD01y/",
         "eyebrow": "UV · Holo · Festival",
-        "heading": "<p>Turn your <em>fire fans</em><br>into <em>silk fans.</em></p>",
+        "heading": "<p>Turn your <em>fire fans</em><br/>into <em>silk fans.</em></p>",
         "subheading": "Slip-on silk covers, hand-sewn to fit your favorite fan frames — Lotus, Spider, Forged Creations®. Same grip, same feel, all silk.",
         "button_label": "Shop the drop",
         "button_link": "shopify://collections/all",
@@ -15,13 +26,45 @@
     "ticker": {
       "type": "ticker",
       "blocks": {
-        "p1": { "type": "phrase", "settings": { "text": "Hand-sewn silk" } },
-        "p2": { "type": "phrase", "settings": { "text": "UV reactive" } },
-        "p3": { "type": "phrase", "settings": { "text": "Holographic" } },
-        "p4": { "type": "phrase", "settings": { "text": "Firesafe wear" } },
-        "p5": { "type": "phrase", "settings": { "text": "Festival ready" } }
+        "p1": {
+          "type": "phrase",
+          "settings": {
+            "text": "Hand-sewn silk"
+          }
+        },
+        "p2": {
+          "type": "phrase",
+          "settings": {
+            "text": "UV reactive"
+          }
+        },
+        "p3": {
+          "type": "phrase",
+          "settings": {
+            "text": "Holographic"
+          }
+        },
+        "p4": {
+          "type": "phrase",
+          "settings": {
+            "text": "Firesafe wear"
+          }
+        },
+        "p5": {
+          "type": "phrase",
+          "settings": {
+            "text": "Festival ready"
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3", "p4", "p5"]
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "settings": {}
     },
     "silk-fans": {
       "type": "featured-collection",
@@ -29,6 +72,7 @@
         "eyebrow": "Silk fans",
         "heading": "Same grip. Silk Flow.",
         "intro": "Hand-sewn silk covers that fit Lotus, Spider, and Forged Creations® frames — 5 wicks, Russian grip. Slip them over your fire fans and your spin is silk.",
+        "collection": "",
         "product_limit": 4,
         "columns": "auto"
       }
@@ -36,6 +80,7 @@
     "editorial-1": {
       "type": "image-with-text",
       "settings": {
+        "video_url": "",
         "media_position": "left",
         "eyebrow": "In motion",
         "heading": "<p>Silk that<br><em>moves with you.</em></p>",
@@ -50,6 +95,7 @@
         "eyebrow": "Non-silk covers",
         "heading": "Less Soot. More Shine.",
         "intro": "Holographic, mirror, iridescent, and reflective covers that keep your fire fans clean and catch every stage light.",
+        "collection": "",
         "product_limit": 4,
         "columns": "auto"
       }
@@ -57,6 +103,7 @@
     "editorial-2": {
       "type": "image-with-text",
       "settings": {
+        "video_url": "",
         "media_position": "right",
         "eyebrow": "Firesafe wear",
         "heading": "<p>Slitweave that<br>holds up to <em>the heat.</em></p>",
@@ -71,6 +118,7 @@
         "eyebrow": "Firesafe wear",
         "heading": "Slitweave bodysuits.",
         "intro": "Hand-cut, hand-tied, in firesafe natural fibers. Available solid or hand-dyed.",
+        "collection": "",
         "product_limit": 4,
         "columns": "2"
       }
@@ -81,6 +129,7 @@
         "eyebrow": "Hoop veils",
         "heading": "Silk that drapes.",
         "intro": "Hand-sewn silk veils sized to drape from your hoop and follow the flow.",
+        "collection": "",
         "product_limit": 4,
         "columns": "auto"
       }
@@ -88,12 +137,45 @@
     "ribbon": {
       "type": "ribbon",
       "blocks": {
-        "f1": { "type": "feat", "settings": { "icon": "🪡", "heading": "Hand-sewn", "text": "Every silk fan stitched by hand. No two are exactly alike." } },
-        "f2": { "type": "feat", "settings": { "icon": "✦", "heading": "Same grip", "text": "Slip them over your fire fans — same Russian grip, in silk." } },
-        "f3": { "type": "feat", "settings": { "icon": "⚡", "heading": "UV + Holo", "text": "Reactive under blacklight. Holographic crowns shift color with every angle." } },
-        "f4": { "type": "feat", "settings": { "icon": "🛡️", "heading": "Firesafe", "text": "Slitweave bodysuits in natural fibers. Built for performers under fire." } }
+        "f1": {
+          "type": "feat",
+          "settings": {
+            "icon": "🪡",
+            "heading": "Hand-sewn",
+            "text": "Every silk fan stitched by hand. No two are exactly alike."
+          }
+        },
+        "f2": {
+          "type": "feat",
+          "settings": {
+            "icon": "✦",
+            "heading": "Same grip",
+            "text": "Slip them over your fire fans — same Russian grip, in silk."
+          }
+        },
+        "f3": {
+          "type": "feat",
+          "settings": {
+            "icon": "⚡",
+            "heading": "UV + Holo",
+            "text": "Reactive under blacklight. Holographic crowns shift color with every angle."
+          }
+        },
+        "f4": {
+          "type": "feat",
+          "settings": {
+            "icon": "🛡️",
+            "heading": "Firesafe",
+            "text": "Slitweave bodysuits in natural fibers. Built for performers under fire."
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3", "f4"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
       "settings": {
         "eyebrow": "Why Flash",
         "heading": "<p>Festival-grade.<br><em>Stage-ready.</em></p>"
@@ -109,5 +191,16 @@
       }
     }
   },
-  "order": ["hero", "ticker", "silk-fans", "editorial-1", "non-silk", "editorial-2", "slitweave", "veils", "ribbon", "newsletter"]
+  "order": [
+    "hero",
+    "ticker",
+    "silk-fans",
+    "editorial-1",
+    "non-silk",
+    "editorial-2",
+    "slitweave",
+    "veils",
+    "ribbon",
+    "newsletter"
+  ]
 }
