@@ -1,23 +1,25 @@
-<section class="section">
-  <div class="page-width">
-    <div class="image-text {% if section.settings.media_position == 'right' %}image-text--reverse{% endif %}" data-reveal>
-      <div class="image-text__media">
-        {%- if section.settings.image -%}
+<section class="section-tight">
+  <div class="page-width page-width--narrow">
+    <div class="editorial-split {% if section.settings.media_position == 'right' %}editorial-split--reverse{% endif %}">
+      <div class="image-col">
+        {%- if section.settings.video_url != blank -%}
+          <video autoplay muted loop playsinline {% if section.settings.image %}poster="{{ section.settings.image | image_url: width: 1200 }}"{% endif %} preload="metadata">
+            <source src="{{ section.settings.video_url }}" type="video/mp4">
+          </video>
+        {%- elsif section.settings.image -%}
           {%- assign iwt_alt = section.settings.image.alt | default: section.settings.heading | escape -%}
           {%- assign iwt_url = section.settings.image | image_url: width: 1200 -%}
-          {{ iwt_url | image_tag: loading: 'lazy', widths: '600, 900, 1200', sizes: '(min-width: 800px) 50vw, 100vw', alt: iwt_alt }}
+          <img src="{{ iwt_url }}" alt="{{ iwt_alt }}" loading="lazy">
         {%- else -%}
           {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
         {%- endif -%}
       </div>
-      <div class="image-text__content">
+      <div class="text-col">
         {%- if section.settings.eyebrow != blank -%}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
         {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
-        {%- if section.settings.text != blank -%}<div class="text-muted">{{ section.settings.text }}</div>{%- endif -%}
+        {%- if section.settings.text != blank -%}{{ section.settings.text }}{%- endif -%}
         {%- if section.settings.button_label != blank -%}
-          <div>
-            <a class="btn btn--primary" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label }}</a>
-          </div>
+          <a class="btn-link" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label }} →</a>
         {%- endif -%}
       </div>
     </div>
@@ -26,9 +28,10 @@
 
 {% schema %}
 {
-  "name": "Image with text",
+  "name": "Editorial split",
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "url", "id": "video_url", "label": "Video URL (optional)", "info": "MP4 hosted via Shopify Files. Replaces the image when present." },
     {
       "type": "select",
       "id": "media_position",
@@ -39,17 +42,17 @@
       ],
       "default": "left"
     },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Performers first" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Engineered for the stage, the playa, and everything in between." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "In motion" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Silk that<br><em>moves with you.</em></p>" },
     {
       "type": "richtext",
       "id": "text",
       "label": "Text",
-      "default": "<p>Every Flash Fashion piece is designed by and tested with working performers — fire dancers, hoopers, DJs, drag artists. Reflective, breathable, and built to glow under blacklight or moonlight.</p>"
+      "default": "<p>Every silk fan is hand-sewn. The iridescent crown is stitched on individually. We don't print and we don't mass-produce — patience is part of the recipe.</p><p>You'll get a pair that no one else has, ever, exactly.</p>"
     },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Our story" },
     { "type": "url", "id": "button_link", "label": "Button link" }
   ],
-  "presets": [{ "name": "Image with text" }]
+  "presets": [{ "name": "Editorial split" }]
 }
 {% endschema %}
