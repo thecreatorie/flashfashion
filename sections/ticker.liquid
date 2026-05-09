@@ -1,0 +1,37 @@
+<div class="ticker">
+  <div class="ticker-track">
+    {%- for i in (1..2) -%}
+      {%- for block in section.blocks -%}
+        <span {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ticker",
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "phrase",
+      "name": "Phrase",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Hand-sewn silk" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ticker",
+      "blocks": [
+        { "type": "phrase", "settings": { "text": "Hand-sewn silk" } },
+        { "type": "phrase", "settings": { "text": "UV reactive" } },
+        { "type": "phrase", "settings": { "text": "Holographic" } },
+        { "type": "phrase", "settings": { "text": "Firesafe wear" } },
+        { "type": "phrase", "settings": { "text": "Festival ready" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

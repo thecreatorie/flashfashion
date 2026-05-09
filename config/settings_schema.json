@@ -107,7 +107,7 @@
         "type": "font_picker",
         "id": "font_heading",
         "label": "Heading font",
-        "default": "assistant_n7"
+        "default": "playfair_display_n7"
       },
       {
         "type": "font_picker",
@@ -139,7 +139,7 @@
         "type": "checkbox",
         "id": "uppercase_headings",
         "label": "Uppercase headings",
-        "default": true
+        "default": false
       }
     ]
   },

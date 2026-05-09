@@ -41,16 +41,24 @@
     <style>
       :root {
         --color-bg: {{ settings.color_background }};
+        --color-bg-2: {{ settings.color_surface }};
+        --color-bg-3: #1d1d22;
         --color-surface: {{ settings.color_surface }};
         --color-fg: {{ settings.color_foreground }};
+        --color-paper: {{ settings.color_foreground }};
+        --color-paper-dim: #c2c2bf;
         --color-muted: {{ settings.color_muted }};
         --color-border: {{ settings.color_border }};
+        --color-line: rgba(255,255,255,0.08);
+        --color-line-strong: rgba(255,255,255,0.16);
         --color-accent: {{ settings.color_accent_primary }};
+        --color-accent-bright: #d6ff5a;
+        --color-accent-soft: rgba(198,255,58,0.14);
         --color-accent-2: {{ settings.color_accent_secondary }};
         --color-accent-3: {{ settings.color_accent_tertiary }};
         --color-accent-rgb: {{ settings.color_accent_primary | color_extract: 'red' }}, {{ settings.color_accent_primary | color_extract: 'green' }}, {{ settings.color_accent_primary | color_extract: 'blue' }};
         --color-bg-rgb: {{ settings.color_background | color_extract: 'red' }}, {{ settings.color_background | color_extract: 'green' }}, {{ settings.color_background | color_extract: 'blue' }};
-        --gradient-holo: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-2) 50%, var(--color-accent-3) 100%);
+        --gradient-holo: linear-gradient(110deg, #c14dff, #ff2e9b, #ff7a1f, #ffe14d, #c6ff3a, #00ffea, #c14dff);
         --font-heading: {{ font_heading.family }}, {{ font_heading.fallback_families }};
         --font-body: {{ font_body.family }}, {{ font_body.fallback_families }};
         --heading-weight: {{ font_heading.weight }};
@@ -60,6 +68,11 @@
         --heading-transform: {% if settings.uppercase_headings %}uppercase{% else %}none{% endif %};
         --page-width: {{ settings.page_width }}px;
         --section-spacing: {{ settings.section_spacing }}px;
+        --r-sm: 12px;
+        --r-md: 20px;
+        --r-lg: 28px;
+        --r-xl: 36px;
+        --r-pill: 999px;
       }
     </style>
 

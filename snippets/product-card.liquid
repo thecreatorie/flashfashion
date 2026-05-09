@@ -63,10 +63,12 @@
   {%- endif -%}
 
   <div class="product-card__info">
-    {%- if show_vendor and product.vendor -%}
-      <div class="product-card__vendor">{{ product.vendor }}</div>
-    {%- endif -%}
-    <h3 class="product-card__title"><a href="{{ product.url }}">{{ product.title }}</a></h3>
-    <div class="product-card__price">{% render 'price', product: product %}</div>
+    <div class="product-card__info-main">
+      {%- if show_vendor and product.vendor -%}
+        <div class="product-card__vendor">{{ product.vendor }}</div>
+      {%- endif -%}
+      <h3 class="product-card__title"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+      <div class="product-card__price">{% render 'price', product: product %}</div>
+    </div>
   </div>
 </article>
