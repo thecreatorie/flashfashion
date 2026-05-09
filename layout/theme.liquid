@@ -27,15 +27,14 @@
     {%- liquid
       assign font_heading = settings.font_heading
       assign font_body = settings.font_body
-      assign font_heading_bold = font_heading | font_modify: 'weight', 'bolder'
       assign font_body_bold = font_body | font_modify: 'weight', 'bolder'
       assign font_body_italic = font_body | font_modify: 'style', 'italic'
     -%}
 
-    {{ font_heading | font_face: font_display: 'swap' }}
-    {{ font_body | font_face: font_display: 'swap' }}
-    {{ font_body_bold | font_face: font_display: 'swap' }}
-    {{ font_body_italic | font_face: font_display: 'swap' }}
+    {%- if font_heading -%}{{ font_heading | font_face: font_display: 'swap' }}{%- endif -%}
+    {%- if font_body -%}{{ font_body | font_face: font_display: 'swap' }}{%- endif -%}
+    {%- if font_body_bold -%}{{ font_body_bold | font_face: font_display: 'swap' }}{%- endif -%}
+    {%- if font_body_italic -%}{{ font_body_italic | font_face: font_display: 'swap' }}{%- endif -%}
 
     <style>
       :root {
