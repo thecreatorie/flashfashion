@@ -12,10 +12,8 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "bg_video_url": "",
-        "media_video_url": "https://www.instagram.com/p/DTfE6ckD01y/",
         "eyebrow": "UV · Holo · Festival",
-        "heading": "<p>Turn your <em>fire fans</em><br/>into <em>silk fans.</em></p>",
+        "heading": "<p>Turn your <em>fire fans</em><br>into <em>silk fans.</em></p>",
         "subheading": "Slip-on silk covers, hand-sewn to fit your favorite fan frames — Lotus, Spider, Forged Creations®. Same grip, same feel, all silk.",
         "button_label": "Shop the drop",
         "button_link": "shopify://collections/all",
@@ -72,7 +70,6 @@
         "eyebrow": "Silk fans",
         "heading": "Same grip. Silk Flow.",
         "intro": "Hand-sewn silk covers that fit Lotus, Spider, and Forged Creations® frames — 5 wicks, Russian grip. Slip them over your fire fans and your spin is silk.",
-        "collection": "",
         "product_limit": 4,
         "columns": "auto"
       }
@@ -80,7 +77,6 @@
     "editorial-1": {
       "type": "image-with-text",
       "settings": {
-        "video_url": "",
         "media_position": "left",
         "eyebrow": "In motion",
         "heading": "<p>Silk that<br><em>moves with you.</em></p>",
@@ -95,7 +91,6 @@
         "eyebrow": "Non-silk covers",
         "heading": "Less Soot. More Shine.",
         "intro": "Holographic, mirror, iridescent, and reflective covers that keep your fire fans clean and catch every stage light.",
-        "collection": "",
         "product_limit": 4,
         "columns": "auto"
       }
@@ -103,7 +98,6 @@
     "editorial-2": {
       "type": "image-with-text",
       "settings": {
-        "video_url": "",
         "media_position": "right",
         "eyebrow": "Firesafe wear",
         "heading": "<p>Slitweave that<br>holds up to <em>the heat.</em></p>",
@@ -118,7 +112,6 @@
         "eyebrow": "Firesafe wear",
         "heading": "Slitweave bodysuits.",
         "intro": "Hand-cut, hand-tied, in firesafe natural fibers. Available solid or hand-dyed.",
-        "collection": "",
         "product_limit": 4,
         "columns": "2"
       }
@@ -129,7 +122,6 @@
         "eyebrow": "Hoop veils",
         "heading": "Silk that drapes.",
         "intro": "Hand-sewn silk veils sized to drape from your hoop and follow the flow.",
-        "collection": "",
         "product_limit": 4,
         "columns": "auto"
       }

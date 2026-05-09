@@ -239,7 +239,8 @@ textarea { resize: vertical; min-height: 8rem; }
   letter-spacing: 0.04em;
   color: var(--color-paper);
 }
-.header__logo img { max-height: 36px; width: auto; }
+.header__logo img { max-height: 40px; width: auto; filter: brightness(0) invert(1); }
+.footer__brand .header__logo img { filter: brightness(0) invert(1); }
 .header__nav {
   display: flex;
   gap: 32px;

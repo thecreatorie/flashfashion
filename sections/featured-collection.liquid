@@ -15,7 +15,11 @@
 
     {%- liquid
       assign collection = section.settings.collection
-      assign products = collection.products
+      if collection != blank and collection.products.size > 0
+        assign products = collection.products
+      else
+        assign products = collections.all.products
+      endif
       assign limit = section.settings.product_limit
       assign cols = section.settings.columns
     -%}
