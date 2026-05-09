@@ -15,6 +15,9 @@
 
   <div class="collection-toolbar">
     <span class="collection-toolbar__count">{{ collection.products_count }} item{% if collection.products_count != 1 %}s{% endif %}</span>
+    {%- if collection.filters.size > 0 -%}
+      <button type="button" class="btn btn--ghost btn--sm" data-filter-toggle aria-expanded="false">Filter</button>
+    {%- endif -%}
     <form method="get">
       <label for="SortBy" class="visually-hidden">Sort</label>
       <select id="SortBy" name="sort_by" onchange="this.form.submit()">
@@ -26,34 +29,103 @@
     </form>
   </div>
 
-  {%- paginate collection.products by section.settings.products_per_page -%}
-    {%- if collection.products.size > 0 -%}
-      <div class="product-grid product-grid--{{ section.settings.columns }}">
-        {%- for product in collection.products -%}
-          {% render 'product-card', product: product %}
-        {%- endfor -%}
-      </div>
-      {%- if paginate.pages > 1 -%}
-        <nav class="pagination" aria-label="Pagination">
-          {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" rel="prev">‹</a>{%- endif -%}
-          {%- for part in paginate.parts -%}
-            {%- if part.is_link -%}
-              <a href="{{ part.url }}">{{ part.title }}</a>
-            {%- else -%}
-              <span class="current">{{ part.title }}</span>
-            {%- endif -%}
+  <div class="collection-layout">
+    {%- if collection.filters.size > 0 -%}
+      <aside class="collection-filters" data-filter-panel>
+        <form id="CollectionFilterForm" class="collection-filters__form">
+          {%- for filter in collection.filters -%}
+            <details class="filter-group" {% if filter.active_values.size > 0 %}open{% endif %}>
+              <summary>
+                <span>{{ filter.label }}</span>
+                <span class="filter-group__count">
+                  {%- if filter.active_values.size > 0 -%}{{ filter.active_values.size }}{%- endif -%}
+                </span>
+              </summary>
+
+              <div class="filter-group__body">
+                {%- case filter.type -%}
+                  {%- when 'list' -%}
+                    <ul class="filter-options">
+                      {%- for value in filter.values -%}
+                        <li>
+                          <label class="filter-option {% if value.active %}is-active{% endif %} {% if value.count == 0 and value.active == false %}is-disabled{% endif %}">
+                            <input
+                              type="checkbox"
+                              name="{{ value.param_name }}"
+                              value="{{ value.value }}"
+                              {% if value.active %}checked{% endif %}
+                              {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                            >
+                            <span class="filter-option__label">{{ value.label }}</span>
+                            <span class="filter-option__count">{{ value.count }}</span>
+                          </label>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- when 'price_range' -%}
+                    <div class="filter-price">
+                      <label>Min<input type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value }}" min="0" placeholder="0"></label>
+                      <label>Max<input type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value }}" min="0" placeholder="∞"></label>
+                    </div>
+                {%- endcase -%}
+              </div>
+            </details>
           {%- endfor -%}
-          {%- if paginate.next -%}<a href="{{ paginate.next.url }}" rel="next">›</a>{%- endif -%}
-        </nav>
-      {%- endif -%}
-    {%- else -%}
-      <div class="empty-state">
-        <p>Nothing in this collection yet.</p>
-        <a class="btn btn--primary" href="{{ routes.collections_url }}">Explore all collections</a>
-      </div>
+
+          <div class="filter-actions">
+            <button type="submit" class="btn btn--primary btn--full">Apply filters</button>
+            {%- if collection.url -%}
+              <a href="{{ collection.url }}" class="btn-link">Clear all</a>
+            {%- endif -%}
+          </div>
+        </form>
+      </aside>
     {%- endif -%}
-  {%- endpaginate -%}
+
+    <div class="collection-products">
+      {%- paginate collection.products by section.settings.products_per_page -%}
+        {%- if collection.products.size > 0 -%}
+          <div class="product-grid {% if section.settings.columns == '2' %}product-grid--2{% endif %}">
+            {%- for product in collection.products -%}
+              {% render 'product-card', product: product %}
+            {%- endfor -%}
+          </div>
+          {%- if paginate.pages > 1 -%}
+            <nav class="pagination" aria-label="Pagination">
+              {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" rel="prev">‹</a>{%- endif -%}
+              {%- for part in paginate.parts -%}
+                {%- if part.is_link -%}
+                  <a href="{{ part.url }}">{{ part.title }}</a>
+                {%- else -%}
+                  <span class="current">{{ part.title }}</span>
+                {%- endif -%}
+              {%- endfor -%}
+              {%- if paginate.next -%}<a href="{{ paginate.next.url }}" rel="next">›</a>{%- endif -%}
+            </nav>
+          {%- endif -%}
+        {%- else -%}
+          <div class="empty-state">
+            <p>Nothing matches those filters.</p>
+            <a class="btn btn--ghost" href="{{ collection.url }}">Clear filters</a>
+          </div>
+        {%- endif -%}
+      {%- endpaginate -%}
+    </div>
+  </div>
 </div>
+
+<script>
+(function () {
+  var toggle = document.querySelector('[data-filter-toggle]');
+  var panel = document.querySelector('[data-filter-panel]');
+  if (toggle && panel) {
+    toggle.addEventListener('click', function () {
+      var open = panel.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
 
 {% schema %}
 {
@@ -66,12 +138,13 @@
       "id": "columns",
       "label": "Columns (desktop)",
       "options": [
-        { "value": "2", "label": "2" },
-        { "value": "3", "label": "3" },
-        { "value": "4", "label": "4" }
+        { "value": "auto", "label": "Auto (responsive)" },
+        { "value": "2", "label": "2 (large)" }
       ],
-      "default": "4"
-    }
+      "default": "auto"
+    },
+    { "type": "header", "content": "Storefront filtering" },
+    { "type": "paragraph", "content": "Configure which filters appear in Online Store → Search & Discovery → Filters. Add a product option named 'Fan Style' with values Lotus / Spider / Forged Creations and enable it as a filter to let shoppers sort by frame type." }
   ]
 }
 {% endschema %}
