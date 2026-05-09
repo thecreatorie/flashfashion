@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "shopify theme dev --store=flash-fashion-5833.myshopify.com",
     "push": "shopify theme push --store=flash-fashion-5833.myshopify.com --unpublished",
-    "check": "shopify theme check"
+    "check": "shopify theme check",
+    "setup": "node scripts/setup-store.mjs"
   },
   "devDependencies": {
     "@shopify/cli": "^3.94.0"
