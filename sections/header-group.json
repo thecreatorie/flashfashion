@@ -17,19 +17,22 @@
         "msg-1": {
           "type": "message",
           "settings": {
-            "text": "Free U.S. shipping over $150"
+            "text": "Free U.S. shipping over $150",
+            "link": ""
           }
         },
         "msg-2": {
           "type": "message",
           "settings": {
-            "text": "Made for performers. Built for the desert."
+            "text": "Made for performers. Made by hand.",
+            "link": ""
           }
         },
         "msg-3": {
           "type": "message",
           "settings": {
-            "text": "New drops every full moon"
+            "text": "New drops every full moon",
+            "link": ""
           }
         }
       },
@@ -38,6 +41,7 @@
         "msg-2",
         "msg-3"
       ],
+      "disabled": true,
       "settings": {}
     },
     "header": {

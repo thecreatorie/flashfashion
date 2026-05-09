@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/FlashFashionLogos-03.png",
     "logo_width": 160,
     "color_background": "#0E0E10",
     "color_surface": "#16161A",
@@ -36,7 +37,8 @@
     "social_tiktok": "",
     "social_youtube": "",
     "social_facebook": "",
-    "social_twitter": ""
+    "social_twitter": "",
+    "content_for_index": []
   },
   "presets": {
     "Flash Fashion": {
