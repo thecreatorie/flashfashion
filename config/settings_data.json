@@ -1,16 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
+    "logo": "shopify://shop_images/FlashFashionLogos-03.png",
     "logo_width": 160,
+    "favicon": "shopify://shop_images/squarelogo.png",
     "color_background": "#0E0E10",
     "color_surface": "#16161A",
     "color_foreground": "#F6F6F4",
     "color_muted": "#88888A",
     "color_border": "#26262B",
-    "color_accent_primary": "#C6FF3A",
+    "color_accent_primary": "#b3ff3a",
     "color_accent_secondary": "#C14DFF",
     "color_accent_tertiary": "#FF2E9B",
     "enable_holographic": true,
-    "font_heading": "playfair_display_n7",
+    "font_heading": "syne_n4",
     "font_body": "inter_n4",
     "heading_scale": 100,
     "body_scale": 100,
@@ -27,7 +38,8 @@
     "social_tiktok": "",
     "social_youtube": "",
     "social_facebook": "",
-    "social_twitter": ""
+    "social_twitter": "",
+    "content_for_index": []
   },
   "presets": {
     "Flash Fashion": {
@@ -38,5 +50,8 @@
       "color_accent_secondary": "#C14DFF",
       "color_accent_tertiary": "#FF2E9B"
     }
+  },
+  "platform_customizations": {
+    "custom_css": []
   }
 }
