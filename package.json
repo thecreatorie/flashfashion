@@ -1,0 +1,14 @@
+{
+  "name": "flashfashion-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Flash Fashion Shopify theme — dev tooling",
+  "scripts": {
+    "dev": "shopify theme dev --store=flash-fashion-5832.myshopify.com",
+    "push": "shopify theme push --store=flash-fashion-5832.myshopify.com --unpublished",
+    "check": "shopify theme check"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.94.0"
+  }
+}
