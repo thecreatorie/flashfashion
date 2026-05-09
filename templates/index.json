@@ -14,10 +14,10 @@
       "settings": {
         "bg_video_url": "https://cdn.shopify.com/videos/c/o/v/0105fc3eb34e482ba0bcbcf4532a9142.mp4",
         "media_video_url": "https://cdn.shopify.com/videos/c/o/v/531ce47013684906935e4a8ef2574972.mp4",
-        "eyebrow": "UV · Holo · Festival",
-        "heading": "<p>Turn your <em>fire fans</em><br>into <em>silk fans.</em></p>",
-        "subheading": "Slip-on silk covers, hand-sewn to fit your favorite fan frames — Lotus, Spider, Forged Creations®. Same grip, same feel, all silk.",
-        "button_label": "Shop the drop",
+        "eyebrow": "Silk Fans you can flow with",
+        "heading": "<p>Turn your <em>fire fans</em><br/>into <em>silk fans.</em></p>",
+        "subheading": "Slip-on silk covers, hand-sewn to fit your favorite fan frames — Lotus, Spider, Forged Creations®. Same grip, same feel, all flow.",
+        "button_label": "Shop the silks",
         "button_link": "shopify://collections/all",
         "button_label_2": "Our story",
         "button_link_2": "shopify://pages/about"
@@ -69,9 +69,10 @@
     "silk-fans": {
       "type": "featured-collection",
       "settings": {
-        "eyebrow": "Silk fans",
-        "heading": "Same grip. Silk Flow.",
-        "intro": "Hand-sewn silk covers that fit Lotus, Spider, and Forged Creations® frames — 5 wicks, Russian grip. Slip them over your fire fans and your spin is silk.",
+        "eyebrow": "Silk fan covers",
+        "heading": "Fire Fan Grip. Silk Fan Flow.",
+        "intro": "Hand-sewn silk fan covers that fit Lotus, Spider, and Forged Creations® frames — 5 wicks, Russian grip and doodle grip. Slip them over your fire fans and you suddenly have a day prop with silk veils.",
+        "collection": "",
         "product_limit": 4,
         "columns": "auto"
       }
@@ -82,18 +83,20 @@
         "video_url": "https://cdn.shopify.com/videos/c/o/v/25f0a1d6fd514cdabd9b2523818fab06.mp4",
         "media_position": "left",
         "eyebrow": "In motion",
-        "heading": "<p>Silk that<br><em>moves with you.</em></p>",
-        "text": "<p>Every silk fan is hand-sewn. The iridescent crown is stitched on individually. We don't print and we don't mass-produce — patience is part of the recipe.</p><p>You'll get a pair that no one else has, ever, exactly.</p>",
-        "button_label": "Our story",
+        "heading": "<p>Silk fans that<br/><em>move the way you want</em></p>",
+        "text": "<p>Every pair of silk fan covers is handmade. </p>",
+        "button_label": "Get a pair",
         "button_link": "shopify://pages/about"
       }
     },
     "non-silk": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "eyebrow": "Non-silk covers",
         "heading": "Less Soot. More Shine.",
         "intro": "Holographic, mirror, iridescent, and reflective covers that keep your fire fans clean and catch every stage light.",
+        "collection": "",
         "product_limit": 4,
         "columns": "auto"
       }
@@ -101,30 +104,36 @@
     "editorial-2": {
       "type": "image-with-text",
       "settings": {
+        "image": "shopify://shop_images/IMG_2736.jpg",
+        "video_url": "",
         "media_position": "right",
         "eyebrow": "Firesafe wear",
-        "heading": "<p>Slitweave that<br>holds up to <em>the heat.</em></p>",
-        "text": "<p>Hand-cut slitweave bodysuits in 100% natural fiber. Synthetics melt to skin under fire — natural fiber doesn't. This is the wear we trust around fire ourselves.</p><p>Each lattice knot is hand-tied. Add the metal upgrade for sharper, longer-lasting hardware.</p>",
+        "heading": "<p>Slitweave that<br/>holds up to <em>the heat.</em></p>",
+        "text": "<p>Hand-cut slitweave bodysuits in 95% natural fiber. Synthetics melt to skin under fire — natural fiber doesn't. This is the wear we trust around fire ourselves.</p><p>Each lattice knot is hand-tied. Add the metal upgrade for sharper, longer-lasting hardware.</p>",
         "button_label": "Shop firesafe wear",
         "button_link": "shopify://collections/all"
       }
     },
     "slitweave": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "eyebrow": "Firesafe wear",
         "heading": "Slitweave bodysuits.",
         "intro": "Hand-cut, hand-tied, in firesafe natural fibers. Available solid or hand-dyed.",
+        "collection": "",
         "product_limit": 4,
         "columns": "2"
       }
     },
     "veils": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "eyebrow": "Hoop veils",
         "heading": "Silk that drapes.",
         "intro": "Hand-sewn silk veils sized to drape from your hoop and follow the flow.",
+        "collection": "",
         "product_limit": 4,
         "columns": "auto"
       }
@@ -137,7 +146,7 @@
           "settings": {
             "icon": "🪡",
             "heading": "Hand-sewn",
-            "text": "Every silk fan stitched by hand. No two are exactly alike."
+            "text": "Every pair of fan covers. All slit weave bodysuits."
           }
         },
         "f2": {
@@ -145,7 +154,7 @@
           "settings": {
             "icon": "✦",
             "heading": "Same grip",
-            "text": "Slip them over your fire fans — same Russian grip, in silk."
+            "text": "Slip them over your fire fans — same familiar grip, with gorgeous silk veils."
           }
         },
         "f3": {
@@ -153,7 +162,7 @@
           "settings": {
             "icon": "⚡",
             "heading": "UV + Holo",
-            "text": "Reactive under blacklight. Holographic crowns shift color with every angle."
+            "text": "Reactive under blacklight. Shines under spotlights."
           }
         },
         "f4": {
@@ -161,7 +170,7 @@
           "settings": {
             "icon": "🛡️",
             "heading": "Firesafe",
-            "text": "Slitweave bodysuits in natural fibers. Built for performers under fire."
+            "text": "Slitweave bodysuits in natural fibers. Made for performers by hand."
           }
         }
       },
@@ -172,12 +181,13 @@
         "f4"
       ],
       "settings": {
-        "eyebrow": "Why Flash",
-        "heading": "<p>Festival-grade.<br><em>Stage-ready.</em></p>"
+        "eyebrow": "Why Flash Fashion",
+        "heading": "<p>Festival-grade.<br/><em>Stage-ready.</em></p>"
       }
     },
     "newsletter": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "eyebrow": "Stay in the flow",
         "heading": "Drops every full moon.",

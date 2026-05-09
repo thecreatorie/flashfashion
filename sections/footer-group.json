@@ -11,6 +11,50 @@
   "type": "footer",
   "name": "Footer group",
   "sections": {
+    "ticker_nyBbrW": {
+      "type": "ticker",
+      "blocks": {
+        "phrase_A8fbTe": {
+          "type": "phrase",
+          "settings": {
+            "text": "Hand-sewn silk fire fan covers"
+          }
+        },
+        "phrase_B9qt7e": {
+          "type": "phrase",
+          "settings": {
+            "text": "UV reactive"
+          }
+        },
+        "phrase_CMYEag": {
+          "type": "phrase",
+          "settings": {
+            "text": "Holographic"
+          }
+        },
+        "phrase_DryPhj": {
+          "type": "phrase",
+          "settings": {
+            "text": "Firesafe wear"
+          }
+        },
+        "phrase_inWL6f": {
+          "type": "phrase",
+          "settings": {
+            "text": "slit weave"
+          }
+        }
+      },
+      "block_order": [
+        "phrase_A8fbTe",
+        "phrase_B9qt7e",
+        "phrase_CMYEag",
+        "phrase_DryPhj",
+        "phrase_inWL6f"
+      ],
+      "name": "Ticker",
+      "settings": {}
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -24,7 +68,8 @@
         "help": {
           "type": "menu",
           "settings": {
-            "heading": "Help"
+            "heading": "Help",
+            "menu": ""
           }
         },
         "newsletter": {
@@ -40,10 +85,14 @@
         "help",
         "newsletter"
       ],
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "tagline": "Festival fashion for performers, by performers."
+      }
     }
   },
   "order": [
+    "ticker_nyBbrW",
     "footer"
   ]
 }
