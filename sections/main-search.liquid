@@ -23,7 +23,11 @@
               {%- when 'article' -%}
                 <a class="article-card" href="{{ item.url }}">
                   <div class="article-card__media">
-                    {%- if item.image -%}{{ item.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: item.title | escape }}{%- endif -%}
+                    {%- if item.image -%}
+                      {%- assign ms_alt = item.title | escape -%}
+                      {%- assign ms_url = item.image | image_url: width: 800 -%}
+                      {{ ms_url | image_tag: loading: 'lazy', alt: ms_alt }}
+                    {%- endif -%}
                   </div>
                   <div class="article-card__meta">Article</div>
                   <h3 class="article-card__title">{{ item.title }}</h3>

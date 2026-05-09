@@ -15,12 +15,14 @@
 
       <a class="header__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
         {%- if settings.logo != blank -%}
-          {{ settings.logo | image_url: width: settings.logo_width | times: 2 | image_tag:
-            loading: 'eager',
-            width: settings.logo_width,
-            height: settings.logo_width | divided_by: settings.logo.aspect_ratio | round,
-            alt: shop.name | escape
-          }}
+          {%- liquid
+            assign logo_w = settings.logo_width
+            assign logo_w_2x = logo_w | times: 2
+            assign logo_h = logo_w | divided_by: settings.logo.aspect_ratio | round
+            assign logo_alt = shop.name | escape
+            assign logo_url = settings.logo | image_url: width: logo_w_2x
+          -%}
+          {{ logo_url | image_tag: loading: 'eager', width: logo_w, height: logo_h, alt: logo_alt }}
         {%- else -%}
           <span>{{ shop.name }}</span>
         {%- endif -%}

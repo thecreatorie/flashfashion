@@ -1,8 +1,10 @@
 <div class="page-width">
   <header class="collection-hero">
     {%- if collection.image and section.settings.show_image -%}
+      {%- assign mc_alt = collection.title | escape -%}
+      {%- assign mc_url = collection.image | image_url: width: 2000 -%}
       <div class="image-text__media" style="aspect-ratio: 4 / 1; margin-bottom: 1.5rem;">
-        {{ collection.image | image_url: width: 2000 | image_tag: loading: 'eager', widths: '900, 1400, 2000', sizes: '100vw', alt: collection.title | escape }}
+        {{ mc_url | image_tag: loading: 'eager', widths: '900, 1400, 2000', sizes: '100vw', alt: mc_alt }}
       </div>
     {%- endif -%}
     <h1>{{ collection.title }}</h1>

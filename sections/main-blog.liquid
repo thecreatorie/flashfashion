@@ -9,7 +9,9 @@
         <a class="article-card" href="{{ article.url }}">
           <div class="article-card__media">
             {%- if article.image -%}
-              {{ article.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '600, 900, 1200', sizes: '(min-width: 800px) 33vw, 100vw', alt: article.title | escape }}
+              {%- assign mb_alt = article.title | escape -%}
+              {%- assign mb_url = article.image | image_url: width: 1200 -%}
+              {{ mb_url | image_tag: loading: 'lazy', widths: '600, 900, 1200', sizes: '(min-width: 800px) 33vw, 100vw', alt: mb_alt }}
             {%- else -%}
               {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}

@@ -4,7 +4,14 @@
       <div class="footer__brand">
         <a class="header__logo" href="{{ routes.root_url }}">
           {%- if settings.logo != blank -%}
-            {{ settings.logo | image_url: width: settings.logo_width | times: 2 | image_tag: loading: 'lazy', width: settings.logo_width, height: settings.logo_width | divided_by: settings.logo.aspect_ratio | round, alt: shop.name | escape }}
+            {%- liquid
+              assign f_logo_w = settings.logo_width
+              assign f_logo_w_2x = f_logo_w | times: 2
+              assign f_logo_h = f_logo_w | divided_by: settings.logo.aspect_ratio | round
+              assign f_logo_alt = shop.name | escape
+              assign f_logo_url = settings.logo | image_url: width: f_logo_w_2x
+            -%}
+            {{ f_logo_url | image_tag: loading: 'lazy', width: f_logo_w, height: f_logo_h, alt: f_logo_alt }}
           {%- else -%}
             <span>{{ shop.name }}</span>
           {%- endif -%}

@@ -9,14 +9,12 @@
     <div class="lookbook" data-reveal>
       {%- for block in section.blocks -%}
         {%- assign size_class = 'lookbook__item--' | append: block.settings.size -%}
-        <a class="lookbook__item {{ size_class }}" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>
+        {%- assign lb_link = block.settings.link | default: '#' -%}
+        <a class="lookbook__item {{ size_class }}" href="{{ lb_link }}" {{ block.shopify_attributes }}>
           {%- if block.settings.image -%}
-            {{ block.settings.image | image_url: width: 1400 | image_tag:
-              loading: 'lazy',
-              widths: '600, 900, 1200, 1400',
-              sizes: '(min-width: 800px) 50vw, 100vw',
-              alt: block.settings.caption | default: block.settings.image.alt | escape
-            }}
+            {%- assign lb_alt = block.settings.caption | default: block.settings.image.alt | escape -%}
+            {%- assign lb_url = block.settings.image | image_url: width: 1400 -%}
+            {{ lb_url | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1400', sizes: '(min-width: 800px) 50vw, 100vw', alt: lb_alt }}
           {%- else -%}
             {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
           {%- endif -%}
@@ -60,15 +58,17 @@
       ]
     }
   ],
-  "default": {
-    "blocks": [
-      { "type": "tile", "settings": { "size": "lg", "caption": "Crew · 01" } },
-      { "type": "tile", "settings": { "size": "md", "caption": "Crew · 02" } },
-      { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 03" } },
-      { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 04" } },
-      { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 05" } }
-    ]
-  },
-  "presets": [{ "name": "Lookbook" }]
+  "presets": [
+    {
+      "name": "Lookbook",
+      "blocks": [
+        { "type": "tile", "settings": { "size": "lg", "caption": "Crew · 01" } },
+        { "type": "tile", "settings": { "size": "md", "caption": "Crew · 02" } },
+        { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 03" } },
+        { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 04" } },
+        { "type": "tile", "settings": { "size": "sm", "caption": "Crew · 05" } }
+      ]
+    }
+  ]
 }
 {% endschema %}

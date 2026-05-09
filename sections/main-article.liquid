@@ -1,8 +1,10 @@
 <div class="page-width">
   <article class="article">
     {%- if article.image -%}
+      {%- assign ma_alt = article.title | escape -%}
+      {%- assign ma_url = article.image | image_url: width: 1600 -%}
       <div class="article__hero">
-        {{ article.image | image_url: width: 1600 | image_tag: loading: 'eager', widths: '600, 900, 1200, 1600', sizes: '(min-width: 900px) 720px, 100vw', alt: article.title | escape }}
+        {{ ma_url | image_tag: loading: 'eager', widths: '600, 900, 1200, 1600', sizes: '(min-width: 900px) 720px, 100vw', alt: ma_alt }}
       </div>
     {%- endif -%}
     <div class="article__meta">{{ article.published_at | date: '%b %-d, %Y' }} · {{ article.author }}</div>

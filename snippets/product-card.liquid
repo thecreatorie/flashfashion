@@ -40,29 +40,17 @@
     </div>
 
     {%- if primary_image -%}
-      {{ primary_image
-        | image_url: width: 800
-        | image_tag:
-          loading: 'lazy',
-          widths: '300, 400, 600, 800, 1000',
-          sizes: '(min-width: 1100px) 25vw, (min-width: 750px) 33vw, 50vw',
-          class: 'img-primary',
-          alt: primary_image.alt | default: product.title | escape
-      }}
+      {%- assign pc_primary_alt = primary_image.alt | default: product.title | escape -%}
+      {%- assign pc_primary_url = primary_image | image_url: width: 800 -%}
+      {{ pc_primary_url | image_tag: loading: 'lazy', widths: '300, 400, 600, 800, 1000', sizes: '(min-width: 1100px) 25vw, (min-width: 750px) 33vw, 50vw', class: 'img-primary', alt: pc_primary_alt }}
     {%- else -%}
       <div class="img-primary placeholder">{{ 'product-1' | placeholder_svg_tag }}</div>
     {%- endif -%}
 
     {%- if show_second_image and secondary_image -%}
-      {{ secondary_image
-        | image_url: width: 800
-        | image_tag:
-          loading: 'lazy',
-          widths: '300, 400, 600, 800',
-          sizes: '(min-width: 1100px) 25vw, (min-width: 750px) 33vw, 50vw',
-          class: 'img-secondary',
-          alt: secondary_image.alt | default: product.title | escape
-      }}
+      {%- assign pc_secondary_alt = secondary_image.alt | default: product.title | escape -%}
+      {%- assign pc_secondary_url = secondary_image | image_url: width: 800 -%}
+      {{ pc_secondary_url | image_tag: loading: 'lazy', widths: '300, 400, 600, 800', sizes: '(min-width: 1100px) 25vw, (min-width: 750px) 33vw, 50vw', class: 'img-secondary', alt: pc_secondary_alt }}
     {%- endif -%}
   </a>
 

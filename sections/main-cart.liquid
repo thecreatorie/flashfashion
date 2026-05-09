@@ -13,7 +13,9 @@
           <div class="cart-page__row" data-line-key="{{ item.key }}">
             <div class="cart-page__media">
               {%- if item.image -%}
-                <a href="{{ item.url }}">{{ item.image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '120,240', alt: item.product.title | escape, width: 120, height: 160 }}</a>
+                {%- assign cp_alt = item.product.title | escape -%}
+                {%- assign cp_url = item.image | image_url: width: 240 -%}
+                <a href="{{ item.url }}">{{ cp_url | image_tag: loading: 'lazy', widths: '120,240', alt: cp_alt, width: 120, height: 160 }}</a>
               {%- endif -%}
             </div>
             <div>

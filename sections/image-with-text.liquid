@@ -3,12 +3,9 @@
     <div class="image-text {% if section.settings.media_position == 'right' %}image-text--reverse{% endif %}" data-reveal>
       <div class="image-text__media">
         {%- if section.settings.image -%}
-          {{ section.settings.image | image_url: width: 1200 | image_tag:
-            loading: 'lazy',
-            widths: '600, 900, 1200',
-            sizes: '(min-width: 800px) 50vw, 100vw',
-            alt: section.settings.image.alt | default: section.settings.heading | escape
-          }}
+          {%- assign iwt_alt = section.settings.image.alt | default: section.settings.heading | escape -%}
+          {%- assign iwt_url = section.settings.image | image_url: width: 1200 -%}
+          {{ iwt_url | image_tag: loading: 'lazy', widths: '600, 900, 1200', sizes: '(min-width: 800px) 50vw, 100vw', alt: iwt_alt }}
         {%- else -%}
           {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
         {%- endif -%}

@@ -16,7 +16,9 @@
           <article class="cart-line" data-line-key="{{ item.key }}">
             <div class="cart-line__media">
               {%- if item.image -%}
-                {{ item.image | image_url: width: 160 | image_tag: loading: 'lazy', widths: '88,176', alt: item.product.title | escape, width: 88, height: 117 }}
+                {%- assign cd_alt = item.product.title | escape -%}
+                {%- assign cd_url = item.image | image_url: width: 160 -%}
+                {{ cd_url | image_tag: loading: 'lazy', widths: '88,176', alt: cd_alt, width: 88, height: 117 }}
               {%- endif -%}
             </div>
             <div class="cart-line__info">

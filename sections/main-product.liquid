@@ -3,12 +3,9 @@
     <div class="product-gallery" data-gallery-main>
       <div class="product-gallery__main">
         {%- if product.featured_image -%}
-          {{ product.featured_image | image_url: width: 1400 | image_tag:
-            loading: 'eager',
-            widths: '600, 900, 1200, 1400',
-            sizes: '(min-width: 900px) 55vw, 100vw',
-            alt: product.featured_image.alt | default: product.title | escape
-          }}
+          {%- assign mp_alt = product.featured_image.alt | default: product.title | escape -%}
+          {%- assign mp_url = product.featured_image | image_url: width: 1400 -%}
+          {{ mp_url | image_tag: loading: 'eager', widths: '600, 900, 1200, 1400', sizes: '(min-width: 900px) 55vw, 100vw', alt: mp_alt }}
         {%- else -%}
           {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
         {%- endif -%}
