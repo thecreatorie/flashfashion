@@ -114,6 +114,18 @@
         "button_link": "shopify://collections/all"
       }
     },
+    "featured_collection_xqiPjk": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "eyebrow": "Silk fans",
+        "heading": "Light up the night.",
+        "intro": "LED Hoods, Hats, and Scarves that can be solid colors, strobing, or fading rainbow. Check out our LED Panda Hood, LED Unicorn, LED Reflective Hood, LED Bucket Hat, and LED Scarf. All scarves are made with Faux Fur, take a 9V battery, and come with a remote to control the LEDs.",
+        "collection": "led-hoods-hats",
+        "product_limit": 12,
+        "columns": "auto"
+      }
+    },
     "slitweave": {
       "type": "featured-collection",
       "disabled": true,
@@ -221,6 +233,7 @@
     "editorial-1",
     "non-silk",
     "editorial-2",
+    "featured_collection_xqiPjk",
     "slitweave",
     "veils",
     "ribbon",
