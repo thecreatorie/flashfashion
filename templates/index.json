@@ -150,6 +150,18 @@
         "columns": "auto"
       }
     },
+    "featured_collection_YdGyE6": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "eyebrow": "Silk fans",
+        "heading": "Find your Bag at the Festival",
+        "intro": "These UV reactive bags are super easy to spot along the wall or ground under blacklights! No more losing your bag because you set it down to flow. Easily locate your belongings - just follow the glow!",
+        "collection": "bags-hydration-backpacks",
+        "product_limit": 4,
+        "columns": "auto"
+      }
+    },
     "ribbon": {
       "type": "ribbon",
       "blocks": {
@@ -236,6 +248,7 @@
     "featured_collection_xqiPjk",
     "slitweave",
     "veils",
+    "featured_collection_YdGyE6",
     "ribbon",
     "newsletter"
   ]
