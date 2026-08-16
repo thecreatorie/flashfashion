@@ -1,6 +1,89 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "main": { "type": "main-page" }
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "rich_text_LhbPxU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kDWwBC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Email Us to Get In Touch"
+          }
+        },
+        "text_R4Lhhw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Flash Fashion was born during the pandemic, inspired by underground desert raves. Today our pieces show up everywhere from festivals to burns. Get your own stand out festival fashion today!<br/><br/>EMAIL: info@flashfashion.com</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kDWwBC",
+        "text_R4Lhhw"
+      ],
+      "name": "Rich text",
+      "settings": {}
+    },
+    "faq_PemjgP": {
+      "type": "faq",
+      "blocks": {
+        "qa_GRgm4z": {
+          "type": "qa",
+          "settings": {
+            "question": "How soon does it ship?",
+            "answer": "<p>Custom orders take the time of creation plus shipping, usually around 3-4 weeks. Ready to ship products are shipped within 48 hours Monday - Friday. </p>"
+          }
+        },
+        "qa_QNBp6X": {
+          "type": "qa",
+          "settings": {
+            "question": "Are the reflective panels real?",
+            "answer": "<p>Yes — 3M-grade retroreflective material that lights up under camera flash and stage lighting. High vis!</p>"
+          }
+        },
+        "qa_fwVXwW": {
+          "type": "qa",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>We ship worldwide. Duties calculated at checkout.</p>"
+          }
+        },
+        "qa_eWEWwf": {
+          "type": "qa",
+          "settings": {
+            "question": "Returns?",
+            "answer": "<p>30-day returns on unworn, unwashed items with tags. Sale items are final. Fan covers must be clean to be returnable.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "qa_GRgm4z",
+        "qa_QNBp6X",
+        "qa_fwVXwW",
+        "qa_eWEWwf"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Before you ask"
+      }
+    }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "rich_text_LhbPxU",
+    "faq_PemjgP"
+  ]
 }

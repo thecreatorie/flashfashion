@@ -17,40 +17,19 @@
         "phrase_A8fbTe": {
           "type": "phrase",
           "settings": {
-            "text": "Hand-sewn silk fire fan covers"
+            "text": "Email Us:"
           }
         },
-        "phrase_B9qt7e": {
+        "phrase_dUhLqB": {
           "type": "phrase",
           "settings": {
-            "text": "UV reactive"
-          }
-        },
-        "phrase_CMYEag": {
-          "type": "phrase",
-          "settings": {
-            "text": "Holographic"
-          }
-        },
-        "phrase_DryPhj": {
-          "type": "phrase",
-          "settings": {
-            "text": "Firesafe wear"
-          }
-        },
-        "phrase_inWL6f": {
-          "type": "phrase",
-          "settings": {
-            "text": "slit weave"
+            "text": "info@flashfashion.com"
           }
         }
       },
       "block_order": [
         "phrase_A8fbTe",
-        "phrase_B9qt7e",
-        "phrase_CMYEag",
-        "phrase_DryPhj",
-        "phrase_inWL6f"
+        "phrase_dUhLqB"
       ],
       "name": "Ticker",
       "settings": {}
