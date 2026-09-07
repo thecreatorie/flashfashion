@@ -1,0 +1,142 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "logo": "shopify://shop_images/FlashFashionLogos-03.png",
+    "logo_width": 160,
+    "favicon": "shopify://shop_images/A8A332A3-1A24-4A9E-BAC4-BD904A10EC4B_4_5005_c.jpg",
+    "color_background": "#0E0E10",
+    "color_surface": "#16161A",
+    "color_foreground": "#F6F6F4",
+    "color_muted": "#88888A",
+    "color_border": "#26262B",
+    "color_accent_primary": "#94FB4A",
+    "color_accent_secondary": "#FF2E9B",
+    "color_accent_tertiary": "#C14DFF",
+    "enable_holographic": true,
+    "font_heading": "unica_one_n4",
+    "font_body": "inter_n4",
+    "heading_scale": 100,
+    "body_scale": 100,
+    "uppercase_headings": false,
+    "page_width": 1320,
+    "section_spacing": 112,
+    "cart_type": "drawer",
+    "show_cart_note": true,
+    "card_image_ratio": "portrait",
+    "card_show_second_image": true,
+    "card_show_vendor": false,
+    "card_quick_add": true,
+    "social_instagram": "https://instagram.com/getflashfashion",
+    "social_tiktok": "",
+    "social_youtube": "",
+    "social_facebook": "",
+    "social_twitter": "",
+    "share_image": "shopify://shop_images/Shopify_Banner-selection.png",
+    "content_for_index": [],
+    "blocks": {
+      "14494032640169117832": {
+        "type": "shopify://apps/instagram-shop-ai/blocks/app-embed/8af8f5ee-21cb-48a3-80e7-13a99e2519b5",
+        "disabled": false,
+        "settings": {}
+      },
+      "13768625480086291342": {
+        "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
+        "disabled": false,
+        "settings": {}
+      },
+      "3979034072534932226": {
+        "type": "shopify://apps/metashop-instagram-facebook/blocks/app-embed/a2ba3b6f-1992-4528-a81d-226ccc4d2a86",
+        "disabled": false,
+        "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "greeting_message": "",
+          "show_featured_products": true,
+          "featured_products": [],
+          "background_color": "#FFFFFF",
+          "font_color": "#000000",
+          "agent_invert_activator_colors": false,
+          "button_color": "#000000",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "agent_inherit_fonts": true,
+          "agent_font": "system_ui_n4",
+          "agent_font_size": 14,
+          "agent_activator_font_size": 13,
+          "agent_border_radius": 16
+        }
+      },
+      "1232542678405107163": {
+        "type": "shopify://apps/instafeed/blocks/head-block/c447db20-095d-4a10-9725-b5977662c9d5",
+        "disabled": false,
+        "settings": {}
+      },
+      "13047258039897440615": {
+        "type": "shopify://apps/judge-me-reviews/blocks/cart_drawer_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": true,
+        "settings": {
+          "widget_type": "review-widget"
+        }
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": true,
+        "settings": {}
+      },
+      "6159598353363395418": {
+        "type": "shopify://apps/google-youtube/blocks/store_widget/14ec7bd0-ac77-49a9-9417-90752398bdff",
+        "disabled": false,
+        "settings": {
+          "widget_position": "LEFT_BOTTOM",
+          "side_margin": 36,
+          "bottom_margin": 36,
+          "mobile_side_margin": 16,
+          "mobile_bottom_margin": 46
+        }
+      },
+      "7079518687644006178": {
+        "type": "shopify://apps/checkout-blocks/blocks/app-embed/b0024ca5-9de8-4bf0-a92f-cd0783877ae2",
+        "disabled": true,
+        "settings": {
+          "utm_id": true,
+          "utm_source": true,
+          "utm_medium": true,
+          "utm_campaign": true,
+          "utm_term": true,
+          "ref": true
+        }
+      },
+      "316487575649303945": {
+        "type": "shopify://apps/easify-options/blocks/app-embed-block/d2288b18-c1ba-42f5-b3b3-26c75c8820bf",
+        "disabled": false,
+        "settings": {
+          "path_loading_mode": "include",
+          "page_paths": ""
+        }
+      }
+    }
+  },
+  "presets": {
+    "Flash Fashion": {
+      "color_background": "#0E0E10",
+      "color_surface": "#16161A",
+      "color_foreground": "#F6F6F4",
+      "color_accent_primary": "#C6FF3A",
+      "color_accent_secondary": "#C14DFF",
+      "color_accent_tertiary": "#FF2E9B"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "ticker_nyBbrW": {
+      "type": "ticker",
+      "blocks": {
+        "phrase_A8fbTe": {
+          "type": "phrase",
+          "settings": {
+            "text": "Email Us:"
+          }
+        },
+        "phrase_dUhLqB": {
+          "type": "phrase",
+          "settings": {
+            "text": "info@flashfashion.com"
+          }
+        }
+      },
+      "block_order": [
+        "phrase_A8fbTe",
+        "phrase_dUhLqB"
+      ],
+      "disabled": true,
+      "name": "Ticker",
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "shop": {
+          "type": "menu",
+          "settings": {
+            "heading": "Shop",
+            "menu": "footer"
+          }
+        },
+        "help": {
+          "type": "menu",
+          "settings": {
+            "heading": "Help",
+            "menu": ""
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Join the crew",
+            "subtext": "Drops, lookbooks, and festival edits straight to your inbox."
+          }
+        }
+      },
+      "block_order": [
+        "shop",
+        "help",
+        "newsletter"
+      ],
+      "disabled": true,
+      "settings": {
+        "tagline": "Festival fashion for performers, by performers."
+      }
+    }
+  },
+  "order": [
+    "ticker_nyBbrW",
+    "footer"
+  ]
+}

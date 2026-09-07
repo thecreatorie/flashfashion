@@ -1,0 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "bg_video_url": "https://cdn.shopify.com/videos/c/o/v/0105fc3eb34e482ba0bcbcf4532a9142.mp4",
+        "media_video_url": "https://cdn.shopify.com/videos/c/o/v/531ce47013684906935e4a8ef2574972.mp4",
+        "eyebrow": "Silk Fans you can flow with",
+        "heading": "<p>Turn your <em><strong>fire fans</strong></em><br/>into <em><strong>silk fans</strong></em><em>.</em></p>",
+        "subheading": "Slip-on silk covers, hand-sewn to fit your favorite fire fan frames — Lotus, Spider, Forged Creations®. Same grip, same feel, all flow.",
+        "button_label": "Shop the silks",
+        "button_link": "shopify://collections/all",
+        "button_label_2": "Our story",
+        "button_link_2": "shopify://pages/about"
+      }
+    },
+    "ticker": {
+      "type": "ticker",
+      "blocks": {
+        "p1": {
+          "type": "phrase",
+          "settings": {
+            "text": "Hand-sewn silk"
+          }
+        },
+        "p2": {
+          "type": "phrase",
+          "settings": {
+            "text": "UV reactive"
+          }
+        },
+        "p3": {
+          "type": "phrase",
+          "settings": {
+            "text": "Holographic"
+          }
+        },
+        "p4": {
+          "type": "phrase",
+          "settings": {
+            "text": "Firesafe wear"
+          }
+        },
+        "p5": {
+          "type": "phrase",
+          "settings": {
+            "text": "Festival ready"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "settings": {}
+    },
+    "silk-fans": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "Silk fan covers",
+        "heading": "Fire Fan Grip. Silk Fan Flow.",
+        "intro": "Hand-sewn silk fan covers that fit Lotus, Spider, and Forged Creations® frames — 5 wicks, Russian grip and doodle grip. Slip them over your fire fans and you suddenly have a day prop with silk veils.",
+        "collection": "silk-fire-fan-covers",
+        "product_limit": 8,
+        "columns": "2"
+      }
+    },
+    "editorial-1": {
+      "type": "image-with-text",
+      "settings": {
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/25f0a1d6fd514cdabd9b2523818fab06.mp4",
+        "media_position": "left",
+        "eyebrow": "In motion",
+        "heading": "<p>Silk fans that<br/><em>move the way you want</em></p>",
+        "text": "<p>Every pair of silk fan covers is handmade. Fits perfectly on your existing fire fans, turning your favorite grip into a flowy new prop.</p>",
+        "button_label": "Get a pair",
+        "button_link": "shopify://collections/silk-fire-fan-covers"
+      }
+    },
+    "non-silk": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Non-silk covers",
+        "heading": "Less Soot. More Shine.",
+        "intro": "Holographic, mirror, iridescent, and reflective covers that keep your fire fans clean and catch every stage light.",
+        "collection": "",
+        "product_limit": 4,
+        "columns": "auto"
+      }
+    },
+    "editorial-2": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify://shop_images/IMG_2736.jpg",
+        "video_url": "",
+        "media_position": "right",
+        "eyebrow": "Firesafe wear",
+        "heading": "<p>Slitweave Bodysuits</p><p>that hold up to <em>the heat.</em></p>",
+        "text": "<p>Hand-cut slitweave bodysuits in 95% cotton. Synthetics melt to skin under fire — natural fiber doesn't. Made by a fire dancer, for flow artists looking for a functional and fashionable firesafe outfit.</p><p>Handmade, customizable, great for festivals!</p>",
+        "button_label": "Shop firesafe wear",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "featured_collection_xqiPjk": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "eyebrow": "Silk fans",
+        "heading": "Light up the night.",
+        "intro": "LED Hoods, Hats, and Scarves that can be solid colors, strobing, or fading rainbow. Check out our LED Panda Hood, LED Unicorn, LED Reflective Hood, LED Bucket Hat, and LED Scarf. All scarves are made with Faux Fur, take a 9V battery, and come with a remote to control the LEDs.",
+        "collection": "led-hoods-hats",
+        "product_limit": 12,
+        "columns": "auto"
+      }
+    },
+    "slitweave": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Firesafe wear",
+        "heading": "Slitweave bodysuits.",
+        "intro": "Hand-cut, hand-tied, in firesafe natural fibers. Available solid or hand-dyed.",
+        "collection": "",
+        "product_limit": 4,
+        "columns": "2"
+      }
+    },
+    "veils": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Hoop veils",
+        "heading": "Silk that drapes.",
+        "intro": "Hand-sewn silk veils sized to drape from your hoop and follow the flow.",
+        "collection": "",
+        "product_limit": 4,
+        "columns": "auto"
+      }
+    },
+    "featured_collection_YdGyE6": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "eyebrow": "Silk fans",
+        "heading": "Find your Bag at the Festival",
+        "intro": "These UV reactive bags are super easy to spot along the wall or ground under blacklights! No more losing your bag because you set it down to flow. Easily locate your belongings - just follow the glow!",
+        "collection": "bags-hydration-backpacks",
+        "product_limit": 4,
+        "columns": "auto"
+      }
+    },
+    "ribbon": {
+      "type": "ribbon",
+      "blocks": {
+        "f1": {
+          "type": "feat",
+          "settings": {
+            "icon": "🪡",
+            "heading": "Handmade by a performer",
+            "text": "Every pair of fan covers. All slit weave bodysuits. I know how important quality is. Where the limits will be tested most. I burn test the fabrics, fit check the fans, and take care in every creation to make sure you will love!"
+          }
+        },
+        "f2": {
+          "type": "feat",
+          "settings": {
+            "icon": "✦",
+            "heading": "Same grip - New Possibilities",
+            "text": "A remarkable new option for those looking to spin silk fans without the uncomfortable hand positioning of traditional silk fans. Slip them over your fire fans — same familiar grip, with gorgeous silk veils."
+          }
+        },
+        "f3": {
+          "type": "feat",
+          "settings": {
+            "icon": "⚡",
+            "heading": "UV Reactive, Holo, & Reflective",
+            "text": "Reactive under blacklight. Shines under spotlights. Changes a kaleidoscope of colors before your eyes. Our products and fabrics are sure to turn heads and catch eyes with their unique properties!"
+          }
+        },
+        "f4": {
+          "type": "feat",
+          "settings": {
+            "icon": "🛡️",
+            "heading": "Firesafe FOR Firedancers",
+            "text": "Slitweave bodysuits in natural fibers. Made for performers by hand by a fire dancer who understands the importance. The lack of cute firesafe options drove me crazy, so I solved the problem!"
+          }
+        },
+        "feat_h4DYhG": {
+          "type": "feat",
+          "settings": {
+            "icon": "✦",
+            "heading": "Stage Grade - Tested by Owner",
+            "text": "Sharing my favorite performer products / tricks with my community is so fun, so I started a business where I could showcase all my favorites and design some myself. Everything at Flash Fashion has been tested on a stage and is made with the intention of capturing the audience."
+          }
+        },
+        "feat_FEnMrP": {
+          "type": "feat",
+          "settings": {
+            "icon": "✦",
+            "heading": "Uniquely You",
+            "text": "Don't you hate seeing the same overdone rave outfits and prop covers from the giant companies? At Flash Fashion things are either handmade or sourced in small batches, so you will have things no one else has!"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "feat_h4DYhG",
+        "feat_FEnMrP"
+      ],
+      "settings": {
+        "eyebrow": "Why Flash Fashion",
+        "heading": "<p>Festival-grade.<br/><em>Stage-ready.</em></p>"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Stay in the flow",
+        "heading": "Drops every full moon.",
+        "text": "Be first on lookbooks, restocks, and members-only festival edits.",
+        "button_label": "Subscribe"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "ticker",
+    "silk-fans",
+    "editorial-1",
+    "non-silk",
+    "editorial-2",
+    "featured_collection_xqiPjk",
+    "slitweave",
+    "veils",
+    "featured_collection_YdGyE6",
+    "ribbon",
+    "newsletter"
+  ]
+}

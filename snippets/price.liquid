@@ -1,0 +1,38 @@
+{%- comment -%}
+  Renders price markup.
+  Usage:
+    {% render 'price', product: product %}
+    {% render 'price', variant: variant %}
+{%- endcomment -%}
+
+{%- liquid
+  if variant
+    assign price = variant.price
+    assign compare_at = variant.compare_at_price
+    assign available = variant.available
+    assign price_min = variant.price
+    assign price_max = variant.price
+  elsif product
+    assign price = product.price
+    assign compare_at = product.compare_at_price
+    assign available = product.available
+    assign price_min = product.price_min
+    assign price_max = product.price_max
+  endif
+-%}
+
+<span class="price">
+  {%- if price_min and price_max and price_min != price_max -%}
+    <span class="price__from">From</span> {{ price_min | money }}
+  {%- else -%}
+    {{ price | money }}
+  {%- endif -%}
+
+  {%- if compare_at and compare_at > price -%}
+    <s>{{ compare_at | money }}</s>
+  {%- endif -%}
+
+  {%- unless available -%}
+    <span class="badge badge--soldout">Sold out</span>
+  {%- endunless -%}
+</span>

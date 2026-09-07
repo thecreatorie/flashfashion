@@ -1,0 +1,58 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "msg-1": {
+          "type": "message",
+          "settings": {
+            "text": "Free U.S. shipping over $150",
+            "link": ""
+          }
+        },
+        "msg-2": {
+          "type": "message",
+          "settings": {
+            "text": "Made for performers. Made by hand.",
+            "link": ""
+          }
+        },
+        "msg-3": {
+          "type": "message",
+          "settings": {
+            "text": "Orders closing 8/25 to 9/8 for Burningman",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "msg-1",
+        "msg-2",
+        "msg-3"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

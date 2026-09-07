@@ -1,0 +1,35 @@
+<div class="page-width">
+  <div class="account-shell">
+    <aside>
+      <h2 class="mb-2">Hi, {{ customer.first_name | default: 'crew' }}.</h2>
+      <nav class="account-nav" aria-label="Account">
+        <a href="{{ routes.account_url }}" aria-current="page">Orders</a>
+        <a href="{{ routes.account_addresses_url }}">Addresses</a>
+        <a href="{{ routes.account_logout_url }}">Sign out</a>
+      </nav>
+    </aside>
+    <section>
+      <h1 class="mb-4">Orders</h1>
+      {%- if customer.orders.size == 0 -%}
+        <p class="text-muted">No orders yet. <a href="{{ routes.collections_url }}" style="text-decoration:underline; text-underline-offset:3px;">Start shopping</a>.</p>
+      {%- else -%}
+        <div>
+          <div class="order-row" style="font-family:var(--font-heading); font-size:0.78rem; letter-spacing:0.16em; text-transform:uppercase; color: var(--color-muted)">
+            <div>Order</div><div>Date</div><div>Status</div><div>Total</div><div></div>
+          </div>
+          {%- for order in customer.orders -%}
+            <div class="order-row">
+              <div><strong>#{{ order.name }}</strong></div>
+              <div>{{ order.created_at | date: '%b %-d, %Y' }}</div>
+              <div>
+                <span style="display:inline-block; padding:0.2rem 0.6rem; border:1px solid var(--color-border); border-radius:999px; font-size:0.75rem;">{{ order.fulfillment_status_label }}</span>
+              </div>
+              <div>{{ order.total_price | money }}</div>
+              <div><a href="{{ order.customer_url }}" class="btn btn--ghost btn--sm">View</a></div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </section>
+  </div>
+</div>

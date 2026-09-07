@@ -1,0 +1,63 @@
+<div class="page-width">
+  <div class="account-shell">
+    <aside>
+      <h2 class="mb-2">Hi, {{ customer.first_name | default: 'crew' }}.</h2>
+      <nav class="account-nav" aria-label="Account">
+        <a href="{{ routes.account_url }}">Orders</a>
+        <a href="{{ routes.account_addresses_url }}" aria-current="page">Addresses</a>
+        <a href="{{ routes.account_logout_url }}">Sign out</a>
+      </nav>
+    </aside>
+
+    <section>
+      <h1 class="mb-4">Addresses</h1>
+
+      {% paginate customer.addresses by 6 %}
+        <div class="product-grid product-grid--2 mb-4">
+          {% for address in customer.addresses %}
+            <div style="border:1px solid var(--color-border); padding:1.5rem; border-radius:8px; background:var(--color-surface);">
+              <h3 class="mb-2" style="font-size:1rem">{{ address.first_name }} {{ address.last_name }} {% if address == customer.default_address %}<span class="badge badge--new">Default</span>{% endif %}</h3>
+              <div class="text-muted">
+                {{ address | format_address }}
+              </div>
+              <div class="flex gap-1 mt-2">
+                <a href="#" onclick="document.querySelector('#edit-{{ address.id }}').toggleAttribute('hidden'); return false;" class="btn btn--ghost btn--sm">Edit</a>
+                {% form 'customer_address', address, method: 'delete' %}
+                  <button type="submit" class="btn btn--ghost btn--sm" onclick="return confirm('Delete this address?')">Delete</button>
+                {% endform %}
+              </div>
+              <div id="edit-{{ address.id }}" hidden style="margin-top:1.5rem;">
+                {% form 'customer_address', address %}
+                  <div class="field"><label>First name</label><input type="text" name="address[first_name]" value="{{ address.first_name }}"></div>
+                  <div class="field"><label>Last name</label><input type="text" name="address[last_name]" value="{{ address.last_name }}"></div>
+                  <div class="field"><label>Address 1</label><input type="text" name="address[address1]" value="{{ address.address1 }}"></div>
+                  <div class="field"><label>Address 2</label><input type="text" name="address[address2]" value="{{ address.address2 }}"></div>
+                  <div class="field"><label>City</label><input type="text" name="address[city]" value="{{ address.city }}"></div>
+                  <div class="field"><label>Country</label><select name="address[country]" data-default="{{ address.country }}">{{ all_country_option_tags }}</select></div>
+                  <div class="field"><label>Postal code</label><input type="text" name="address[zip]" value="{{ address.zip }}"></div>
+                  <button type="submit" class="btn btn--primary btn--sm">Save</button>
+                {% endform %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endpaginate %}
+
+      <details>
+        <summary class="btn btn--primary" style="cursor:pointer; max-width:200px;">+ New address</summary>
+        <div style="border:1px solid var(--color-border); padding:1.5rem; border-radius:8px; background:var(--color-surface); margin-top:1rem;">
+          {% form 'customer_address', customer.new_address %}
+            <div class="field"><label>First name</label><input type="text" name="address[first_name]"></div>
+            <div class="field"><label>Last name</label><input type="text" name="address[last_name]"></div>
+            <div class="field"><label>Address 1</label><input type="text" name="address[address1]"></div>
+            <div class="field"><label>Address 2</label><input type="text" name="address[address2]"></div>
+            <div class="field"><label>City</label><input type="text" name="address[city]"></div>
+            <div class="field"><label>Country</label><select name="address[country]">{{ all_country_option_tags }}</select></div>
+            <div class="field"><label>Postal code</label><input type="text" name="address[zip]"></div>
+            <button type="submit" class="btn btn--primary">Add address</button>
+          {% endform %}
+        </div>
+      </details>
+    </section>
+  </div>
+</div>

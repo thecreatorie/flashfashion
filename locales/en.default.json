@@ -1,0 +1,67 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "search": {
+      "search": "Search",
+      "placeholder": "Search products"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "close": "Close",
+    "open_menu": "Open menu",
+    "cart": "Cart"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to bag",
+      "sold_out": "Sold out",
+      "quick_add": "Quick add",
+      "quantity": "Quantity"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your bag",
+      "empty": "Your bag is empty.",
+      "subtotal": "Subtotal",
+      "checkout": "Checkout",
+      "view_cart": "View bag",
+      "remove": "Remove",
+      "note": "Order note"
+    }
+  },
+  "customer": {
+    "login_page": {
+      "title": "Sign in",
+      "email": "Email",
+      "password": "Password",
+      "sign_in": "Sign in",
+      "forgot_password": "Forgot password?"
+    },
+    "register": {
+      "title": "Create account",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "submit": "Create account"
+    },
+    "account": {
+      "title": "Account",
+      "orders": "Orders",
+      "addresses": "Addresses",
+      "logout": "Sign out"
+    }
+  },
+  "newsletter": {
+    "label": "Email address",
+    "subscribe": "Subscribe",
+    "success": "Welcome to the crew. Check your inbox."
+  }
+}
