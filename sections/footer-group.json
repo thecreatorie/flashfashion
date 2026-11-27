@@ -42,12 +42,28 @@
           "type": "menu",
           "settings": {
             "heading": "Shop",
+            "menu": "footer-shop"
+          }
+        },
+        "help": {
+          "type": "menu",
+          "settings": {
+            "heading": "Help",
             "menu": "footer"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Join the crew",
+            "subtext": "Drops, lookbooks, and festival edits straight to your inbox."
           }
         }
       },
       "block_order": [
-        "shop"
+        "shop",
+        "help",
+        "newsletter"
       ],
       "settings": {
         "tagline": "Festival fashion for performers, by performers."

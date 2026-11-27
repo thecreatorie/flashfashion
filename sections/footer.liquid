@@ -58,7 +58,7 @@
 
     <div class="footer__bottom">
       <div>© {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</div>
-      <div>
+      <div class="footer__payments">
         {%- for type in shop.enabled_payment_types -%}
           {{ type | payment_type_svg_tag: class: 'payment-icon' }}
         {%- endfor -%}

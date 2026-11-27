@@ -17,7 +17,7 @@
         "msg-1": {
           "type": "message",
           "settings": {
-            "text": "Free U.S. shipping over $150",
+            "text": "Free U.S. shipping over $100",
             "link": ""
           }
         },
@@ -27,21 +27,12 @@
             "text": "Made for performers. Made by hand.",
             "link": ""
           }
-        },
-        "msg-3": {
-          "type": "message",
-          "settings": {
-            "text": "Orders closing 8/25 to 9/8 for Burningman",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "msg-1",
-        "msg-2",
-        "msg-3"
+        "msg-2"
       ],
-      "disabled": true,
       "settings": {}
     },
     "header": {

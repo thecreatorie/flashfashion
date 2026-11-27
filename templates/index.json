@@ -110,15 +110,15 @@
         "eyebrow": "Firesafe wear",
         "heading": "<p>Slitweave Bodysuits</p><p>that hold up to <em>the heat.</em></p>",
         "text": "<p>Hand-cut slitweave bodysuits in 95% cotton. Synthetics melt to skin under fire — natural fiber doesn't. Made by a fire dancer, for flow artists looking for a functional and fashionable firesafe outfit.</p><p>Handmade, customizable, great for festivals!</p>",
-        "button_label": "Shop firesafe wear",
-        "button_link": "shopify://collections/all"
+        "button_label": "Request a custom bodysuit",
+        "button_link": "shopify://pages/contact"
       }
     },
     "featured_collection_xqiPjk": {
       "type": "featured-collection",
       "name": "Featured collection",
       "settings": {
-        "eyebrow": "Silk fans",
+        "eyebrow": "LED hoods & hats",
         "heading": "Light up the night.",
         "intro": "LED Hoods, Hats, and Scarves that can be solid colors, strobing, or fading rainbow. Check out our LED Panda Hood, LED Unicorn, LED Reflective Hood, LED Bucket Hat, and LED Scarf. All scarves are made with Faux Fur, take a 9V battery, and come with a remote to control the LEDs.",
         "collection": "led-hoods-hats",
@@ -154,7 +154,7 @@
       "type": "featured-collection",
       "name": "Featured collection",
       "settings": {
-        "eyebrow": "Silk fans",
+        "eyebrow": "Festival bags",
         "heading": "Find your Bag at the Festival",
         "intro": "These UV reactive bags are super easy to spot along the wall or ground under blacklights! No more losing your bag because you set it down to flow. Easily locate your belongings - just follow the glow!",
         "collection": "bags-hydration-backpacks",
