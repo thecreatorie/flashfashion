@@ -14,13 +14,6 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "msg-1": {
-          "type": "message",
-          "settings": {
-            "text": "Free U.S. shipping over $100",
-            "link": ""
-          }
-        },
         "msg-2": {
           "type": "message",
           "settings": {
@@ -30,7 +23,6 @@
         }
       },
       "block_order": [
-        "msg-1",
         "msg-2"
       ],
       "settings": {},

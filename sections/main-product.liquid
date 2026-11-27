@@ -111,9 +111,6 @@
             </form>
           {%- when 'meta' -%}
             <ul class="product-meta" {{ block.shopify_attributes }}>
-              {%- if block.settings.show_shipping -%}
-                <li class="product-meta__item">{% render 'icon-shipping' %} Free shipping over $100</li>
-              {%- endif -%}
               {%- if block.settings.show_returns -%}
                 <li class="product-meta__item">{% render 'icon-returns' %} 30-day returns</li>
               {%- endif -%}
