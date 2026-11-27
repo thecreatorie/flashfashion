@@ -144,7 +144,8 @@
         "product_limit": 4,
         "accent": "pink",
         "flip": false,
-        "band": true
+        "band": true,
+        "contain": true
       }
     },
     "slitweaves": {

@@ -9,8 +9,8 @@
     if (!productData) return;
 
     const variantInput = form.querySelector('[name="id"]');
-    const priceEl = form.querySelector('[data-product-price]');
-    const compareEl = form.querySelector('[data-product-compare]');
+    const priceEl = (form.querySelector('[data-product-price]') || (form.closest('.product-info') || document).querySelector('[data-product-price]'));
+    const compareEl = (form.querySelector('[data-product-compare]') || (form.closest('.product-info') || document).querySelector('[data-product-compare]'));
     const submitBtn = form.querySelector('[data-product-submit]');
     const submitLabel = submitBtn ? submitBtn.querySelector('[data-product-submit-label]') : null;
     const optionPills = form.querySelectorAll('[data-option-pill]');
