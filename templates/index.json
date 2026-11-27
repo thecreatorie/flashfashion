@@ -10,180 +10,197 @@
 {
   "sections": {
     "hero": {
-      "type": "hero",
-      "settings": {
-        "bg_video_url": "https://cdn.shopify.com/videos/c/o/v/0105fc3eb34e482ba0bcbcf4532a9142.mp4",
-        "media_video_url": "https://cdn.shopify.com/videos/c/o/v/531ce47013684906935e4a8ef2574972.mp4",
-        "eyebrow": "Silk Fans you can flow with",
-        "heading": "<p>Turn your <em><strong>fire fans</strong></em><br/>into <em><strong>silk fans</strong></em><em>.</em></p>",
-        "subheading": "Slip-on silk covers, hand-sewn to fit your favorite fire fan frames — Lotus, Spider, Forged Creations®. Same grip, same feel, all flow.",
-        "button_label": "Shop the silks",
-        "button_link": "shopify://collections/all",
-        "button_label_2": "Our story",
-        "button_link_2": "shopify://pages/about"
-      }
-    },
-    "ticker": {
-      "type": "ticker",
+      "type": "neon-hero",
       "blocks": {
-        "p1": {
-          "type": "phrase",
+        "s1": {
+          "type": "slide",
           "settings": {
-            "text": "Hand-sewn silk"
+            "product": "furry-led-bucket-hat"
           }
         },
-        "p2": {
-          "type": "phrase",
+        "s2": {
+          "type": "slide",
           "settings": {
-            "text": "UV reactive"
+            "product": "furry-unicorn-led-hood"
           }
         },
-        "p3": {
-          "type": "phrase",
+        "s3": {
+          "type": "slide",
           "settings": {
-            "text": "Holographic"
+            "collection": "silk-fire-fan-covers",
+            "title": "Silk Fire Fan Covers"
           }
         },
-        "p4": {
-          "type": "phrase",
+        "s4": {
+          "type": "slide",
           "settings": {
-            "text": "Firesafe wear"
+            "product": "furry-panda-led-hood"
           }
         },
-        "p5": {
-          "type": "phrase",
+        "s5": {
+          "type": "slide",
           "settings": {
-            "text": "Festival ready"
+            "product": "neon-orange-cowgirl-set",
+            "title": "Yeehaw Cowgirl Set"
+          }
+        },
+        "s6": {
+          "type": "slide",
+          "settings": {
+            "product": "furry-reflective-led-hood"
+          }
+        },
+        "s7": {
+          "type": "slide",
+          "settings": {
+            "product": "raging-rainbow-hydration-backpack"
           }
         }
       },
       "block_order": [
-        "p1",
-        "p2",
-        "p3",
-        "p4",
-        "p5"
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7"
+      ],
+      "settings": {
+        "eyebrow": "Festival · Nightlife · Fire",
+        "heading": "Light up <strong>the</strong> <em>night</em>",
+        "text": "LED hoods, hats and boas, silk fire fan covers and firesafe slitweaves. Made for performers and built to be seen from the back of the crowd.",
+        "button_label": "Shop the glow",
+        "button_link": "shopify://collections/led-hoods-hats",
+        "button_label_2": "Fire fans",
+        "button_link_2": "shopify://collections/silk-fire-fan-covers",
+        "interval": 3.5
+      }
+    },
+    "tiles": {
+      "type": "neon-tiles",
+      "blocks": {
+        "t1": {
+          "type": "tile",
+          "settings": {
+            "label": "Fans",
+            "link": "shopify://collections/silk-fire-fan-covers"
+          }
+        },
+        "t2": {
+          "type": "tile",
+          "settings": {
+            "label": "Slitweaves",
+            "link": "/#slitweaves"
+          }
+        },
+        "t3": {
+          "type": "tile",
+          "settings": {
+            "label": "Hoods",
+            "link": "shopify://collections/led-hoods-hats"
+          }
+        },
+        "t4": {
+          "type": "tile",
+          "settings": {
+            "label": "Bags",
+            "link": "shopify://collections/bags-hydration-backpacks"
+          }
+        },
+        "t5": {
+          "type": "tile",
+          "settings": {
+            "label": "Pasties",
+            "link": "shopify://collections/pastease"
+          }
+        },
+        "t6": {
+          "type": "tile",
+          "settings": {
+            "label": "Reflective",
+            "link": "shopify://collections/reflective-rainbow-rave"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6"
       ],
       "settings": {}
     },
-    "silk-fans": {
-      "type": "featured-collection",
+    "fans": {
+      "type": "neon-split",
       "settings": {
-        "eyebrow": "Silk fan covers",
-        "heading": "Fire Fan Grip. Silk Fan Flow.",
-        "intro": "Hand-sewn silk fan covers that fit Lotus, Spider, and Forged Creations® frames — 5 wicks, Russian grip and doodle grip. Slip them over your fire fans and you suddenly have a day prop with silk veils.",
+        "anchor": "fans",
+        "eyebrow": "Fans",
+        "heading": "Turn your <em>fire fans</em> into silk fans",
+        "text": "Slip-on covers, hand-sewn to fit your fire fan frames. Same grip, same feel, all flow.",
         "collection": "silk-fire-fan-covers",
-        "product_limit": 8,
-        "columns": "2"
-      }
-    },
-    "editorial-1": {
-      "type": "image-with-text",
-      "settings": {
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/25f0a1d6fd514cdabd9b2523818fab06.mp4",
-        "media_position": "left",
-        "eyebrow": "In motion",
-        "heading": "<p>Silk fans that<br/><em>move the way you want</em></p>",
-        "text": "<p>Every pair of silk fan covers is handmade. Fits perfectly on your existing fire fans, turning your favorite grip into a flowy new prop.</p>",
-        "button_label": "Get a pair",
-        "button_link": "shopify://collections/silk-fire-fan-covers"
-      }
-    },
-    "non-silk": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "eyebrow": "Non-silk covers",
-        "heading": "Less Soot. More Shine.",
-        "intro": "Holographic, mirror, iridescent, and reflective covers that keep your fire fans clean and catch every stage light.",
-        "collection": "",
         "product_limit": 4,
-        "columns": "auto"
+        "accent": "pink",
+        "flip": false,
+        "band": true
       }
     },
-    "editorial-2": {
-      "type": "image-with-text",
+    "slitweaves": {
+      "type": "neon-split",
       "settings": {
+        "anchor": "slitweaves",
+        "eyebrow": "Slitweaves",
+        "heading": "Slitweave bodysuits that hold up to <em>the heat</em>",
+        "text": "Firesafe wear in natural fibers, made by hand by a fire dancer.",
         "image": "shopify://shop_images/IMG_2736.jpg",
-        "video_url": "",
-        "media_position": "right",
-        "eyebrow": "Firesafe wear",
-        "heading": "<p>Slitweave Bodysuits</p><p>that hold up to <em>the heat.</em></p>",
-        "text": "<p>Hand-cut slitweave bodysuits in 95% cotton. Synthetics melt to skin under fire — natural fiber doesn't. Made by a fire dancer, for flow artists looking for a functional and fashionable firesafe outfit.</p><p>Handmade, customizable, great for festivals!</p>",
+        "product_limit": 0,
         "button_label": "Request a custom bodysuit",
-        "button_link": "shopify://pages/contact"
+        "button_link": "shopify://pages/contact",
+        "accent": "purple",
+        "flip": true,
+        "band": false
       }
     },
-    "featured_collection_xqiPjk": {
-      "type": "featured-collection",
-      "name": "Featured collection",
+    "glow": {
+      "type": "neon-grid",
       "settings": {
-        "eyebrow": "LED hoods & hats",
-        "heading": "Light up the night.",
-        "intro": "LED Hoods, Hats, and Scarves that can be solid colors, strobing, or fading rainbow. Check out our LED Panda Hood, LED Unicorn, LED Reflective Hood, LED Bucket Hat, and LED Scarf. All scarves are made with Faux Fur, take a 9V battery, and come with a remote to control the LEDs.",
-        "collection": "led-hoods-hats",
-        "product_limit": 12,
-        "columns": "auto"
+        "eyebrow": "Glow",
+        "heading": "Gear that <em>glows</em>",
+        "text": "Hoods, hats, bags and body gems from the Flash Fashion shop.",
+        "products": [
+          "furry-led-bucket-hat",
+          "furry-unicorn-led-hood",
+          "furry-panda-led-hood",
+          "furry-reflective-led-hood",
+          "silver-iridescent-festival-captain-s-hat",
+          "prism-bucket-hat",
+          "rainbow-reflective-windbreaker-jacket",
+          "raging-rainbow-hydration-backpack",
+          "psychedelic-green-hydration-bag",
+          "glowglam-rave-gems"
+        ],
+        "product_limit": 10,
+        "accent": "green"
       }
     },
-    "slitweave": {
-      "type": "featured-collection",
-      "disabled": true,
+    "pasties": {
+      "type": "neon-banner",
       "settings": {
-        "eyebrow": "Firesafe wear",
-        "heading": "Slitweave bodysuits.",
-        "intro": "Hand-cut, hand-tied, in firesafe natural fibers. Available solid or hand-dyed.",
-        "collection": "",
-        "product_limit": 4,
-        "columns": "2"
-      }
-    },
-    "veils": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "eyebrow": "Hoop veils",
-        "heading": "Silk that drapes.",
-        "intro": "Hand-sewn silk veils sized to drape from your hoop and follow the flow.",
-        "collection": "",
-        "product_limit": 4,
-        "columns": "auto"
-      }
-    },
-    "featured_collection_YdGyE6": {
-      "type": "featured-collection",
-      "name": "Featured collection",
-      "settings": {
-        "eyebrow": "Festival bags",
-        "heading": "Find your Bag at the Festival",
-        "intro": "These UV reactive bags are super easy to spot along the wall or ground under blacklights! No more losing your bag because you set it down to flow. Easily locate your belongings - just follow the glow!",
-        "collection": "bags-hydration-backpacks",
-        "product_limit": 4,
-        "columns": "auto"
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "disabled": true,
-      "settings": {
-        "eyebrow": "Stay in the flow",
-        "heading": "Drops every full moon.",
-        "text": "Be first on lookbooks, restocks, and members-only festival edits.",
-        "button_label": "Subscribe"
+        "heading": "Hate wearing bras? <em>Try our pasties!</em>",
+        "button_label": "Shop pasties",
+        "button_link": "shopify://collections/pastease",
+        "accent": "pink"
       }
     }
   },
   "order": [
     "hero",
-    "ticker",
-    "silk-fans",
-    "editorial-1",
-    "non-silk",
-    "editorial-2",
-    "featured_collection_xqiPjk",
-    "slitweave",
-    "veils",
-    "featured_collection_YdGyE6",
-    "newsletter"
+    "tiles",
+    "fans",
+    "slitweaves",
+    "glow",
+    "pasties"
   ]
 }

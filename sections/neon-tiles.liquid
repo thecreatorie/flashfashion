@@ -1,0 +1,27 @@
+<div class="nx nx-tiles">
+  <div class="nx-wrap nx-cats">
+    {%- for block in section.blocks -%}
+      {%- assign nx_c = forloop.index0 | modulo: 3 -%}
+      <a class="nx-cat nx-cat--{{ nx_c }} nx-rv" href="{{ block.settings.link | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Category tiles",
+  "max_blocks": 6,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Tile",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Fans" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Category tiles", "blocks": [{ "type": "tile" }, { "type": "tile" }, { "type": "tile" }] }]
+}
+{% endschema %}

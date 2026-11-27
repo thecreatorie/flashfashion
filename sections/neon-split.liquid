@@ -1,0 +1,52 @@
+{%- liquid
+  assign nx_collection = section.settings.collection
+  assign nx_image = section.settings.image
+  if nx_image == blank and nx_collection != blank
+    assign nx_image = nx_collection.image
+  endif
+-%}
+<section class="nx nx-sec nx--{{ section.settings.accent }}{% if section.settings.band %} nx-sec--band{% endif %}"{% if section.settings.anchor != blank %} id="{{ section.settings.anchor | handleize }}"{% endif %}>
+  <div class="nx-wrap nx-split{% if section.settings.flip %} nx-split--flip{% endif %}">
+    {%- if nx_image != blank -%}
+      <div class="nx-photo nx-rv">
+        {{ nx_image | image_url: width: 1100 | image_tag: loading: 'lazy', widths: '500, 800, 1100', sizes: '(min-width: 721px) 480px, 92vw', alt: section.settings.eyebrow }}
+      </div>
+    {%- endif -%}
+    <div>
+      {%- if section.settings.eyebrow != blank -%}<p class="nx-eyebrow nx-rv">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="nx-disp nx-rv">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<p class="nx-sub nx-rv">{{ section.settings.text }}</p>{%- endif -%}
+      {%- if nx_collection != blank and section.settings.product_limit > 0 -%}
+        <div class="nx-grid nx-grid--4">
+          {%- for product in nx_collection.products limit: section.settings.product_limit -%}
+            {% render 'nx-card', product: product %}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <p class="nx-rv"{% if nx_collection != blank and section.settings.product_limit > 0 %} style="margin-top:28px"{% endif %}><a class="nx-btn nx-btn--p" href="{{ section.settings.button_link | default: nx_collection.url | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Neon photo + text",
+  "settings": [
+    { "type": "text", "id": "anchor", "label": "Anchor name", "info": "Lets other links jump here, for example /#slitweaves" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Fans" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "info": "Italic text glows in the accent color.", "default": "Turn your <em>fire fans</em> into silk fans" },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "image_picker", "id": "image", "label": "Photo", "info": "Leave empty to use the collection's photo." },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "product_limit", "min": 0, "max": 8, "step": 1, "label": "Products to show", "default": 4 },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "select", "id": "accent", "label": "Glow color", "options": [{ "value": "pink", "label": "Pink" }, { "value": "purple", "label": "Purple" }, { "value": "green", "label": "Green" }], "default": "pink" },
+    { "type": "checkbox", "id": "flip", "label": "Photo on the right", "default": false },
+    { "type": "checkbox", "id": "band", "label": "Tinted background band", "default": false }
+  ],
+  "presets": [{ "name": "Neon photo + text" }]
+}
+{% endschema %}
