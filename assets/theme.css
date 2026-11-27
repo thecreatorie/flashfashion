@@ -1551,3 +1551,4 @@ textarea { resize: vertical; min-height: 8rem; }
 @media (max-width: 560px) {
   .collection-products .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 }
+.collection-products .product-card__media img { object-position: center top; }
