@@ -14,7 +14,7 @@
       "settings": {
         "show_image": true,
         "products_per_page": 48,
-        "columns": "4"
+        "columns": "auto"
       }
     }
   },

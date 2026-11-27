@@ -162,71 +162,6 @@
         "columns": "auto"
       }
     },
-    "ribbon": {
-      "type": "ribbon",
-      "blocks": {
-        "f1": {
-          "type": "feat",
-          "settings": {
-            "icon": "🪡",
-            "heading": "Handmade by a performer",
-            "text": "Every pair of fan covers. All slit weave bodysuits. I know how important quality is. Where the limits will be tested most. I burn test the fabrics, fit check the fans, and take care in every creation to make sure you will love!"
-          }
-        },
-        "f2": {
-          "type": "feat",
-          "settings": {
-            "icon": "✦",
-            "heading": "Same grip - New Possibilities",
-            "text": "A remarkable new option for those looking to spin silk fans without the uncomfortable hand positioning of traditional silk fans. Slip them over your fire fans — same familiar grip, with gorgeous silk veils."
-          }
-        },
-        "f3": {
-          "type": "feat",
-          "settings": {
-            "icon": "⚡",
-            "heading": "UV Reactive, Holo, & Reflective",
-            "text": "Reactive under blacklight. Shines under spotlights. Changes a kaleidoscope of colors before your eyes. Our products and fabrics are sure to turn heads and catch eyes with their unique properties!"
-          }
-        },
-        "f4": {
-          "type": "feat",
-          "settings": {
-            "icon": "🛡️",
-            "heading": "Firesafe FOR Firedancers",
-            "text": "Slitweave bodysuits in natural fibers. Made for performers by hand by a fire dancer who understands the importance. The lack of cute firesafe options drove me crazy, so I solved the problem!"
-          }
-        },
-        "feat_h4DYhG": {
-          "type": "feat",
-          "settings": {
-            "icon": "✦",
-            "heading": "Stage Grade - Tested by Owner",
-            "text": "Sharing my favorite performer products / tricks with my community is so fun, so I started a business where I could showcase all my favorites and design some myself. Everything at Flash Fashion has been tested on a stage and is made with the intention of capturing the audience."
-          }
-        },
-        "feat_FEnMrP": {
-          "type": "feat",
-          "settings": {
-            "icon": "✦",
-            "heading": "Uniquely You",
-            "text": "Don't you hate seeing the same overdone rave outfits and prop covers from the giant companies? At Flash Fashion things are either handmade or sourced in small batches, so you will have things no one else has!"
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4",
-        "feat_h4DYhG",
-        "feat_FEnMrP"
-      ],
-      "settings": {
-        "eyebrow": "Why Flash Fashion",
-        "heading": "<p>Festival-grade.<br/><em>Stage-ready.</em></p>"
-      }
-    },
     "newsletter": {
       "type": "newsletter",
       "disabled": true,
@@ -249,7 +184,6 @@
     "slitweave",
     "veils",
     "featured_collection_YdGyE6",
-    "ribbon",
     "newsletter"
   ]
 }

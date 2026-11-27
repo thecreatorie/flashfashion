@@ -1,15 +1,23 @@
 <div class="page-width">
-  <header class="collection-hero">
-    {%- if collection.image and section.settings.show_image -%}
+  {%- liquid
+    assign mc_has_image = false
+    if collection.image and section.settings.show_image
+      assign mc_has_image = true
+    endif
+  -%}
+  <header class="collection-hero{% if mc_has_image %} collection-hero--media{% endif %}">
+    <div class="collection-hero__text">
+      <h1>{{ collection.title }}</h1>
+      {%- if collection.description != blank -%}
+        <div class="text-muted collection-hero__desc">{{ collection.description }}</div>
+      {%- endif -%}
+    </div>
+    {%- if mc_has_image -%}
       {%- assign mc_alt = collection.title | escape -%}
-      {%- assign mc_url = collection.image | image_url: width: 2000 -%}
-      <div class="image-text__media" style="aspect-ratio: 4 / 1; margin-bottom: 1.5rem;">
-        {{ mc_url | image_tag: loading: 'eager', widths: '900, 1400, 2000', sizes: '100vw', alt: mc_alt }}
+      {%- assign mc_url = collection.image | image_url: width: 1200 -%}
+      <div class="collection-hero__media">
+        {{ mc_url | image_tag: loading: 'eager', widths: '480, 800, 1200', sizes: '(min-width: 721px) 420px, 100vw', alt: mc_alt }}
       </div>
-    {%- endif -%}
-    <h1>{{ collection.title }}</h1>
-    {%- if collection.description != blank -%}
-      <div class="text-muted" style="max-width:60ch">{{ collection.description }}</div>
     {%- endif -%}
   </header>
 
@@ -87,7 +95,7 @@
         {%- if collection.products.size > 0 -%}
           <div class="product-grid {% if section.settings.columns == '2' %}product-grid--2{% endif %}">
             {%- for product in collection.products -%}
-              {% render 'product-card', product: product %}
+              {% render 'product-card', product: product, image_ratio: 'square' %}
             {%- endfor -%}
           </div>
           {%- if paginate.pages > 1 -%}
