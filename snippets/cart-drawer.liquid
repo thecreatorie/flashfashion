@@ -26,6 +26,12 @@
               {%- unless item.product_has_only_default_variant -%}
                 <div class="cart-line__variant">{{ item.variant.title }}</div>
               {%- endunless -%}
+              {%- for property in item.properties -%}
+                {%- assign property_first = property.first | slice: 0 -%}
+                {%- if property.last != blank and property_first != '_' -%}
+                  <div class="cart-line__variant">{{ property.first }}: {{ property.last }}</div>
+                {%- endif -%}
+              {%- endfor -%}
               <div class="cart-line__bottom">
                 <div class="qty">
                   <button type="button" data-qty-dec aria-label="Decrease">−</button>
@@ -43,17 +49,19 @@
 
     <footer class="cart-drawer__foot" data-cart-foot{% if cart.item_count == 0 %} style="display:none"{% endif %}>
       {%- if settings.show_cart_note -%}
-        <div class="cart-drawer__note field">
-          <label for="cart-note">Order note</label>
-          <textarea id="cart-note" data-cart-note name="note" rows="2">{{ cart.note }}</textarea>
-        </div>
+        <details class="cart-drawer__note"{% if cart.note != blank %} open{% endif %}>
+          <summary>Add an order note</summary>
+          <textarea id="cart-note" data-cart-note name="note" rows="2" aria-label="Order note">{{ cart.note }}</textarea>
+        </details>
       {%- endif -%}
       <div class="cart-drawer__totals">
         <span class="eyebrow">Subtotal</span>
         <span class="total" data-cart-total>{{ cart.total_price | money }}</span>
       </div>
-      <a class="btn btn--primary btn--full" href="{{ routes.cart_url }}">View bag</a>
-      <a class="btn btn--secondary btn--full" href="/checkout">Checkout</a>
+      <div class="cart-drawer__actions">
+        <a class="btn btn--secondary btn--full" href="{{ routes.cart_url }}">View bag</a>
+        <a class="btn btn--primary btn--full" href="/checkout">Checkout</a>
+      </div>
       <p class="cart-drawer__shipping">Shipping &amp; taxes calculated at checkout.</p>
     </footer>
   </div>

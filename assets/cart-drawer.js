@@ -46,6 +46,11 @@
   function renderLine(item) {
     const img = item.image ? item.image.replace(/\.([a-z]+)\?/, '_120x.$1?') : '';
     const variant = item.options_with_values && item.options_with_values.map(o => o.value).join(' / ');
+    const esc = (v) => String(v).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const props = Object.entries(item.properties || {})
+      .filter(([k, v]) => v && k.charAt(0) !== '_')
+      .map(([k, v]) => `<div class="cart-line__variant">${esc(k)}: ${esc(v)}</div>`)
+      .join('');
     return `
       <article class="cart-line" data-line-key="${item.key}">
         <div class="cart-line__media">
@@ -54,6 +59,7 @@
         <div class="cart-line__info">
           <a class="cart-line__title" href="${item.url}">${item.product_title}</a>
           ${variant ? `<div class="cart-line__variant">${variant}</div>` : ''}
+          ${props}
           <div class="cart-line__bottom">
             <div class="qty">
               <button type="button" data-qty-dec aria-label="Decrease">−</button>
