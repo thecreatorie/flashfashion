@@ -52,7 +52,7 @@
         "button_link": "shopify://collections/led-hoods-hats",
         "button_label_2": "Fan covers",
         "button_link_2": "shopify://collections/silk-fire-fan-covers",
-        "interval": 3.5
+        "interval": 6
       }
     },
     "tiles": {
@@ -133,7 +133,7 @@
         "eyebrow": "Slitweaves",
         "heading": "Slitweave bodysuits that hold up to <em>the heat</em>",
         "text": "Firesafe wear in natural fibers, made by hand by a fire dancer.",
-        "image": "shopify://shop_images/IMG_2736.jpg",
+        "image": "shopify://shop_images/fire-dragonstaff.jpg",
         "product_limit": 4,
         "button_label": "Shop slitweaves",
         "button_link": "shopify://collections/slitweaves",
@@ -150,16 +150,16 @@
         "heading": "Gear that <em>glows</em>",
         "text": "Hoods, hats, bags and body gems from the Flash Fashion shop.",
         "products": [
-          "furry-led-bucket-hat",
           "furry-unicorn-led-hood",
           "furry-panda-led-hood",
           "furry-reflective-led-hood",
           "silver-iridescent-festival-captain-s-hat",
-          "prism-bucket-hat",
           "rainbow-reflective-windbreaker-jacket",
           "raging-rainbow-hydration-backpack",
           "psychedelic-green-hydration-bag",
-          "glowglam-rave-gems"
+          "glowglam-rave-gems",
+          "furry-led-boa",
+          "glowing-green-mini-backpack"
         ],
         "product_limit": 10,
         "accent": "green"
