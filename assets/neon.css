@@ -169,3 +169,8 @@ input:not([type='checkbox']):not([type='radio']):focus, select:focus, textarea:f
 .prop-pill input { position: absolute; opacity: 0; pointer-events: none; }
 .prop-pill:has(input:checked) { border-color: var(--color-accent); background: var(--color-accent-soft); color: var(--color-accent); }
 .prop-pill:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+/* Mobile menu drawer */
+.mobile-menu__panel { background: var(--nx-ink); border-left: 1px solid var(--nx-p); box-shadow: -20px 0 80px rgba(255, 46, 155, .25); }
+.mobile-menu__nav a { font-style: italic; font-weight: 800; text-transform: uppercase; transition: color .2s, text-shadow .2s, padding-left .25s var(--nx-spring); }
+.mobile-menu__nav a:hover, .mobile-menu__nav a:active { color: var(--nx-g); text-shadow: 0 0 14px rgba(148, 251, 74, .8); padding-left: 8px; }

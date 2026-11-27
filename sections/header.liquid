@@ -41,22 +41,24 @@
     </div>
   </div>
 
-  <div class="mobile-menu" data-mobile-menu aria-hidden="true">
-    <div class="mobile-menu__panel">
-      <button type="button" class="header__icon-btn mobile-menu__close" data-menu-close aria-label="Close menu">{% render 'icon-close' %}</button>
-      {%- if section.settings.menu != blank -%}
-        <nav class="mobile-menu__nav" aria-label="Mobile primary">
-          {%- for link in section.settings.menu.links -%}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          {%- endfor -%}
-        </nav>
-      {%- endif -%}
-      <div class="mt-4">
-        {% render 'social-icons' %}
-      </div>
+</header>
+
+<div class="mobile-menu" data-mobile-menu aria-hidden="true">
+  <div class="mobile-menu__panel">
+    <button type="button" class="header__icon-btn mobile-menu__close" data-menu-close aria-label="Close menu">{% render 'icon-close' %}</button>
+    {%- if section.settings.menu != blank -%}
+      <nav class="mobile-menu__nav" aria-label="Mobile primary">
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {%- endfor -%}
+      </nav>
+    {%- endif -%}
+    <div class="mt-4">
+      {% render 'social-icons' %}
     </div>
   </div>
-</header>
+</div>
+
 
 {% schema %}
 {

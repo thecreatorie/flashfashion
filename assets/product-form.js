@@ -68,7 +68,7 @@
       // Update gallery if variant has featured image
       if (variant.featured_image && variant.featured_image.src) {
         const main = document.querySelector('[data-gallery-main] img');
-        if (main) main.src = variant.featured_image.src;
+        if (main) { main.removeAttribute('srcset'); main.removeAttribute('sizes'); main.src = variant.featured_image.src; }
       }
       updateAvailability();
     }
@@ -171,7 +171,7 @@
     thumb.addEventListener('click', () => {
       const src = thumb.getAttribute('data-image');
       const main = document.querySelector('[data-gallery-main] img');
-      if (main && src) main.src = src;
+      if (main && src) { main.removeAttribute('srcset'); main.removeAttribute('sizes'); main.src = src; }
       document.querySelectorAll('[data-gallery-thumb]').forEach((t) => t.setAttribute('aria-current', 'false'));
       thumb.setAttribute('aria-current', 'true');
     });
