@@ -91,7 +91,7 @@
           "type": "tile",
           "settings": {
             "label": "Slitweaves",
-            "link": "/#slitweaves"
+            "link": "shopify://collections/slitweaves"
           }
         },
         "t3": {
@@ -155,12 +155,13 @@
         "heading": "Slitweave bodysuits that hold up to <em>the heat</em>",
         "text": "Firesafe wear in natural fibers, made by hand by a fire dancer.",
         "image": "shopify://shop_images/IMG_2736.jpg",
-        "product_limit": 0,
-        "button_label": "Request a custom bodysuit",
-        "button_link": "shopify://pages/contact",
+        "product_limit": 4,
+        "button_label": "Shop slitweaves",
+        "button_link": "shopify://collections/slitweaves",
         "accent": "purple",
         "flip": true,
-        "band": false
+        "band": false,
+        "collection": "slitweaves"
       }
     },
     "glow": {
