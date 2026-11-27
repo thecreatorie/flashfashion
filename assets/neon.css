@@ -162,3 +162,4 @@ input:not([type='checkbox']):not([type='radio']):focus, select:focus, textarea:f
 .nx-hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(transparent, var(--nx-ink)); pointer-events: none; }
 .nx-hero .nx-wrap { z-index: 1; }
 .nx-tiles { padding-top: 16px; }
+.main h1, .main h2 { font-weight: 800; }
