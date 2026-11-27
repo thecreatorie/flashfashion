@@ -33,7 +33,8 @@
         "msg-1",
         "msg-2"
       ],
-      "settings": {}
+      "settings": {},
+      "disabled": true
     },
     "header": {
       "type": "header",

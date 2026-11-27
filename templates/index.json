@@ -15,7 +15,8 @@
         "s1": {
           "type": "slide",
           "settings": {
-            "product": "furry-led-bucket-hat"
+            "product": "crossfire-slit-weave-bodysuit",
+            "image": "shopify://shop_images/1F8A2867.jpg"
           }
         },
         "s2": {
@@ -27,30 +28,10 @@
         "s3": {
           "type": "slide",
           "settings": {
-            "collection": "silk-fire-fan-covers",
-            "title": "Silk Fire Fan Covers"
+            "product": "rainbow-reflective-windbreaker-jacket"
           }
         },
         "s4": {
-          "type": "slide",
-          "settings": {
-            "product": "furry-panda-led-hood"
-          }
-        },
-        "s5": {
-          "type": "slide",
-          "settings": {
-            "product": "neon-orange-cowgirl-set",
-            "title": "Yeehaw Cowgirl Set"
-          }
-        },
-        "s6": {
-          "type": "slide",
-          "settings": {
-            "product": "furry-reflective-led-hood"
-          }
-        },
-        "s7": {
           "type": "slide",
           "settings": {
             "product": "raging-rainbow-hydration-backpack"
@@ -61,18 +42,15 @@
         "s1",
         "s2",
         "s3",
-        "s4",
-        "s5",
-        "s6",
-        "s7"
+        "s4"
       ],
       "settings": {
         "eyebrow": "Festival · Nightlife · Fire",
         "heading": "Light up <strong>the</strong> <em>night</em>",
-        "text": "LED hoods, hats and boas, silk fire fan covers and firesafe slitweaves. Made for performers and built to be seen from the back of the crowd.",
+        "text": "Firesafe slitweaves, LED hoods, reflective jackets and festival bags, plus silk fire fan covers. Made for performers and built to be seen from the back of the crowd.",
         "button_label": "Shop the glow",
         "button_link": "shopify://collections/led-hoods-hats",
-        "button_label_2": "Fire fans",
+        "button_label_2": "Fan covers",
         "button_link_2": "shopify://collections/silk-fire-fan-covers",
         "interval": 3.5
       }
@@ -83,7 +61,7 @@
         "t1": {
           "type": "tile",
           "settings": {
-            "label": "Fans",
+            "label": "Fan Covers",
             "link": "shopify://collections/silk-fire-fan-covers"
           }
         },
@@ -137,7 +115,7 @@
       "type": "neon-split",
       "settings": {
         "anchor": "fans",
-        "eyebrow": "Fans",
+        "eyebrow": "Fan covers",
         "heading": "Turn your <em>fire fans</em> into silk fans",
         "text": "Slip-on covers, hand-sewn to fit your fire fan frames. Same grip, same feel, all flow.",
         "collection": "silk-fire-fan-covers",
@@ -206,4 +184,3 @@
     "pasties"
   ]
 }
-

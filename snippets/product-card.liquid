@@ -57,9 +57,13 @@
 
     {%- if show_quick_add and product.available and first_available.id -%}
       <div class="product-card__quick-add">
-        <button type="button" class="btn btn--primary btn--sm btn--full" data-quick-add data-variant-id="{{ first_available.id }}">
-          Quick add
-        </button>
+        {%- if product.has_only_default_variant -%}
+          <button type="button" class="btn btn--primary btn--sm btn--full" data-quick-add data-variant-id="{{ first_available.id }}">
+            Quick add
+          </button>
+        {%- else -%}
+          <a class="btn btn--primary btn--sm btn--full" href="{{ product.url }}">Choose options</a>
+        {%- endif -%}
       </div>
     {%- endif -%}
   </div>
