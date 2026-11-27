@@ -58,8 +58,24 @@
                 ]
               }</script>
 
+              {%- capture strap_html -%}
+                {%- if product.tags contains 'strap-choice' -%}
+                  <div class="variant-group">
+                    <div class="variant-group__label">Strap<span class="selected" data-strap-selected>Spaghetti</span></div>
+                    <div class="variant-options" onchange="this.parentNode.querySelector('[data-strap-selected]').textContent = this.querySelector('input:checked').value">
+                      <label class="variant-pill prop-pill"><input type="radio" name="properties[Strap]" value="Spaghetti" checked>Spaghetti</label>
+                      <label class="variant-pill prop-pill"><input type="radio" name="properties[Strap]" value="Scoop tank">Scoop tank</label>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endcapture -%}
+
               {%- unless product.has_only_default_variant -%}
                 {%- for option in product.options_with_values -%}
+                  {%- if option.name == 'Color' -%}
+                    {{ strap_html }}
+                    {%- assign strap_html = '' -%}
+                  {%- endif -%}
                   <div class="variant-group">
                     <div class="variant-group__label">{{ option.name }}<span class="selected" data-option-selected="{{ forloop.index }}">{{ option.selected_value }}</span></div>
                     <div class="variant-options">
@@ -75,15 +91,7 @@
 
               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
-              {%- if product.tags contains 'strap-choice' -%}
-                <div class="variant-group">
-                  <div class="variant-group__label">Strap<span class="selected" data-strap-selected>Spaghetti</span></div>
-                  <div class="variant-options" onchange="this.parentNode.querySelector('[data-strap-selected]').textContent = this.querySelector('input:checked').value">
-                    <label class="variant-pill prop-pill"><input type="radio" name="properties[Strap]" value="Spaghetti" checked>Spaghetti</label>
-                    <label class="variant-pill prop-pill"><input type="radio" name="properties[Strap]" value="Scoop tank">Scoop tank</label>
-                  </div>
-                </div>
-              {%- endif -%}
+              {{ strap_html }}
 
               {%- if product.tags contains 'made-to-order' -%}
                 <input type="hidden" name="properties[Made to order]" value="Usually ready in 2-4 weeks">
