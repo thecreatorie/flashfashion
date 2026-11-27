@@ -75,6 +75,11 @@
 
               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
+              {%- if product.tags contains 'made-to-order' -%}
+                <input type="hidden" name="properties[Made to order]" value="Usually ready in 2-4 weeks">
+                <p class="made-to-order">Made to order. Usually ready in 2&ndash;4 weeks, depending on your selections.</p>
+              {%- endif -%}
+
               <div class="flex gap-1 mt-2">
                 <div class="qty">
                   <button type="button" data-qty-dec aria-label="Decrease">−</button>
