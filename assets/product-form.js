@@ -177,3 +177,5 @@
     });
   });
 })();
+
+/* Price element can sit outside the form (see product-info). */
