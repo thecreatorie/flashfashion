@@ -191,3 +191,7 @@ input:not([type='checkbox']):not([type='radio']):focus, select:focus, textarea:f
 
 /* Card buttons: keep the label on one line inside narrow cards */
 .product-card__quick-add .btn { padding: 10px 8px; font-size: .7rem; letter-spacing: .06em; white-space: nowrap; }
+
+/* Low-stock note above the buy button */
+.low-stock { margin: 16px 0 0; font-size: .88rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--nx-p); text-shadow: 0 0 14px rgba(255, 46, 155, .55); }
+.low-stock[hidden] { display: none; }

@@ -59,6 +59,20 @@
         submitBtn.disabled = !variant.available;
         if (submitLabel) submitLabel.textContent = variant.available ? 'Add to bag' : 'Sold out';
       }
+      // Low-stock note for the chosen variant
+      const lowEl = form.querySelector('[data-low-stock]');
+      const stockJson = form.querySelector('[data-stock-json]');
+      if (lowEl && stockJson) {
+        try {
+          const q = JSON.parse(stockJson.textContent)[String(variant.id)];
+          if (q !== null && q !== undefined && q > 0 && q <= 5) {
+            lowEl.querySelector('[data-low-stock-count]').textContent = q;
+            lowEl.removeAttribute('hidden');
+          } else {
+            lowEl.setAttribute('hidden', '');
+          }
+        } catch (e) { /* leave the note as rendered */ }
+      }
       // Update url
       if (variant.id && history.replaceState) {
         const url = new URL(window.location);
