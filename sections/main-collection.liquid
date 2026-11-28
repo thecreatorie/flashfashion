@@ -5,6 +5,11 @@
       assign mc_has_image = true
     endif
   -%}
+  {%- if collection.handle == 'all' -%}
+  <header class="collection-hero collection-hero--bare">
+    <h1 class="visually-hidden">Shop</h1>
+  </header>
+  {%- else -%}
   <header class="collection-hero{% if mc_has_image %} collection-hero--media{% endif %}">
     <div class="collection-hero__text">
       <h1>{{ collection.title }}</h1>
@@ -16,10 +21,11 @@
       {%- assign mc_alt = collection.title | escape -%}
       {%- assign mc_url = collection.image | image_url: width: 1200 -%}
       <div class="collection-hero__media">
-        {{ mc_url | image_tag: loading: 'eager', widths: '480, 800, 1200', sizes: '(min-width: 721px) 420px, 100vw', alt: mc_alt }}
+        {{ mc_url | image_tag: loading: 'eager', widths: '480, 800, 1200', sizes: '(min-width: 721px) 420px, 45vw', alt: mc_alt }}
       </div>
     {%- endif -%}
   </header>
+  {%- endif -%}
 
   <div class="collection-toolbar">
     <span class="collection-toolbar__count">{{ collection.products_count }} item{% if collection.products_count != 1 %}s{% endif %}</span>
