@@ -147,16 +147,16 @@
       "settings": {
         "eyebrow": "Glow",
         "heading": "Gear that <em>glows</em>",
-        "text": "Hoods, hats, bags and body gems from the Flash Fashion shop.",
+        "text": "Hoods, hats, bags and jackets from the Flash Fashion shop.",
         "products": [
           "furry-unicorn-led-hood",
           "furry-panda-led-hood",
           "furry-reflective-led-hood",
+          "rainbow-captain-s-hat",
           "silver-iridescent-festival-captain-s-hat",
+          "reflective-burningman-captain-s-hat",
           "rainbow-reflective-windbreaker-jacket",
           "raging-rainbow-hydration-backpack",
-          "psychedelic-green-hydration-bag",
-          "glowglam-rave-gems",
           "furry-led-boa",
           "glowing-green-mini-backpack"
         ],
@@ -172,6 +172,23 @@
         "button_link": "shopify://collections/pastease",
         "accent": "pink"
       }
+    },
+    "fits": {
+      "type": "neon-grid",
+      "settings": {
+        "eyebrow": "Wear",
+        "heading": "Festival <em>fits</em>",
+        "text": "Dresses, sets and layers, in stock and ready to ship.",
+        "products": [
+          "black-latex-bodycon-dress",
+          "neon-orange-cowgirl-set",
+          "black-fishnet-crop-hoodie",
+          "heartbreaker-leg-garters",
+          "psychedelic-green-hydration-bag"
+        ],
+        "product_limit": 5,
+        "accent": "pink"
+      }
     }
   },
   "order": [
@@ -180,6 +197,7 @@
     "fans",
     "slitweaves",
     "glow",
+    "fits",
     "pasties"
   ]
 }
