@@ -1,0 +1,93 @@
+<section class="nx nx-hero">
+  <div class="nx-blob nx-blob--a"></div>
+  <div class="nx-blob nx-blob--b"></div>
+  <div class="nx-wrap nx-hero__grid">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}<p class="nx-eyebrow nx-rv">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h1 class="nx-disp nx-rv">{{ section.settings.heading }}</h1>
+      {%- if section.settings.text != blank -%}<p class="nx-lede nx-rv">{{ section.settings.text }}</p>{%- endif -%}
+      <div class="nx-cta nx-rv">
+        {%- if section.settings.button_label != blank -%}
+          <a class="nx-btn nx-btn--g" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+        {%- if section.settings.button_label_2 != blank -%}
+          <a class="nx-btn nx-btn--p" href="{{ section.settings.button_link_2 | default: routes.all_products_collection_url }}">{{ section.settings.button_label_2 }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="nx-stage nx-rv" data-nx-rotator data-interval="{{ section.settings.interval | times: 1000 }}">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign s_product = block.settings.product
+            assign s_collection = block.settings.collection
+            assign s_image = block.settings.image
+            assign s_title = block.settings.title
+            assign s_url = routes.all_products_collection_url
+            assign s_price = ''
+            if s_product != blank
+              assign s_image = s_image | default: s_product.featured_image
+              assign s_title = s_title | default: s_product.title
+              assign s_url = s_product.url
+              assign s_price = s_product.price_min | money
+            elsif s_collection != blank
+              assign s_image = s_image | default: s_collection.image
+              assign s_title = s_title | default: s_collection.title
+              assign s_url = s_collection.url
+              assign s_min = 0
+              for s_item in s_collection.products limit: 50
+                if s_min == 0 or s_item.price_min < s_min
+                  assign s_min = s_item.price_min
+                endif
+              endfor
+              if s_min > 0
+                assign s_price = s_min | money | prepend: 'from '
+              endif
+            endif
+            assign s_loading = 'lazy'
+            if forloop.first
+              assign s_loading = 'eager'
+            endif
+          -%}
+          {%- if s_image != blank -%}
+            <a class="nx-slide{% if forloop.first %} is-on{% endif %}" href="{{ s_url }}" {{ block.shopify_attributes }}>
+              {{ s_image | image_url: width: 900 | image_tag: loading: s_loading, widths: '400, 600, 900', sizes: '(min-width: 721px) 400px, 90vw', alt: s_title }}
+              <span class="nx-cap"><span>{{ s_title }}</span>{% if s_price != blank %}<b>{{ s_price }}</b>{% endif %}</span>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Neon hero",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Festival · Nightlife · Fire" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "info": "Bold text glows green. Italic text glows pink and flickers.", "default": "Light up <strong>the</strong> <em>night</em>" },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the glow" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "text", "id": "button_label_2", "label": "Second button label" },
+    { "type": "url", "id": "button_link_2", "label": "Second button link" },
+    { "type": "range", "id": "interval", "min": 2, "max": 8, "step": 0.5, "unit": "s", "label": "Seconds per slide", "default": 3.5 }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "collection", "id": "collection", "label": "Or a collection", "info": "Used when no product is chosen. Shows the lowest price as \"from\"." },
+        { "type": "image_picker", "id": "image", "label": "Photo (optional)", "info": "Leave empty to use the product's or collection's main photo." },
+        { "type": "text", "id": "title", "label": "Caption (optional)" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Neon hero", "blocks": [{ "type": "slide" }, { "type": "slide" }] }]
+}
+{% endschema %}

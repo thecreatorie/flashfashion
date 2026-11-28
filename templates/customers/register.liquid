@@ -1,0 +1,17 @@
+<div class="page-width">
+  <div class="auth-card">
+    <h1>Join the crew</h1>
+    <p>Create an account to track orders and shop drops first.</p>
+
+    {% form 'create_customer', novalidate: 'novalidate' %}
+      {%- if form.errors -%}<div class="form-status form-status--error">{{ form.errors | default_errors }}</div>{%- endif -%}
+      <div class="field"><label>First name</label><input type="text" name="customer[first_name]" autocomplete="given-name"></div>
+      <div class="field"><label>Last name</label><input type="text" name="customer[last_name]" autocomplete="family-name"></div>
+      <div class="field"><label>Email</label><input type="email" name="customer[email]" autocomplete="email" required></div>
+      <div class="field"><label>Password</label><input type="password" name="customer[password]" autocomplete="new-password" required></div>
+      <button type="submit" class="btn btn--primary btn--full">Create account</button>
+    {% endform %}
+
+    <p class="auth-card__alt">Already a member? <a href="{{ routes.account_login_url }}">Sign in</a></p>
+  </div>
+</div>

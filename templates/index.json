@@ -1,0 +1,185 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "neon-hero",
+      "blocks": {
+        "s1": {
+          "type": "slide",
+          "settings": {
+            "product": "crossfire-slit-weave-bodysuit"
+          }
+        },
+        "s2": {
+          "type": "slide",
+          "settings": {
+            "product": "furry-unicorn-led-hood"
+          }
+        },
+        "s3": {
+          "type": "slide",
+          "settings": {
+            "product": "rainbow-reflective-windbreaker-jacket"
+          }
+        },
+        "s4": {
+          "type": "slide",
+          "settings": {
+            "product": "raging-rainbow-hydration-backpack"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "eyebrow": "Festival · Nightlife · Fire",
+        "heading": "Light up <strong>the</strong> <em>night</em>",
+        "text": "Firesafe slitweaves, LED hoods, reflective jackets and festival bags, plus silk fire fan covers. Made for performers and built to be seen from the back of the crowd.",
+        "button_label": "Shop the glow",
+        "button_link": "shopify://collections/led-hoods-hats",
+        "button_label_2": "Fan covers",
+        "button_link_2": "shopify://collections/silk-fire-fan-covers",
+        "interval": 6
+      }
+    },
+    "tiles": {
+      "type": "neon-tiles",
+      "blocks": {
+        "t1": {
+          "type": "tile",
+          "settings": {
+            "label": "Fan Covers",
+            "link": "shopify://collections/silk-fire-fan-covers"
+          }
+        },
+        "t2": {
+          "type": "tile",
+          "settings": {
+            "label": "Slitweaves",
+            "link": "shopify://collections/slitweaves"
+          }
+        },
+        "t3": {
+          "type": "tile",
+          "settings": {
+            "label": "LED",
+            "link": "shopify://collections/led-hoods-hats"
+          }
+        },
+        "t4": {
+          "type": "tile",
+          "settings": {
+            "label": "Bags",
+            "link": "shopify://collections/bags-hydration-backpacks"
+          }
+        },
+        "t5": {
+          "type": "tile",
+          "settings": {
+            "label": "Pasties",
+            "link": "shopify://collections/pastease"
+          }
+        },
+        "t6": {
+          "type": "tile",
+          "settings": {
+            "label": "Reflective",
+            "link": "shopify://collections/reflective-rainbow-rave"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6"
+      ],
+      "settings": {}
+    },
+    "fans": {
+      "type": "neon-split",
+      "settings": {
+        "anchor": "fans",
+        "eyebrow": "Fan covers",
+        "heading": "Turn your <em>fire fans</em> into silk fans",
+        "text": "Slip-on covers, hand-sewn to fit your fire fan frames. Same grip, same feel, all flow.",
+        "collection": "silk-fire-fan-covers",
+        "product_limit": 4,
+        "accent": "pink",
+        "flip": false,
+        "band": true,
+        "contain": true
+      }
+    },
+    "slitweaves": {
+      "type": "neon-split",
+      "settings": {
+        "anchor": "slitweaves",
+        "eyebrow": "Slitweaves",
+        "heading": "Slitweave bodysuits that hold up to <em>the heat</em>",
+        "text": "Firesafe wear in natural fibers, made by hand by a fire dancer.",
+        "image": "shopify://shop_images/fire-dragonstaff.jpg",
+        "product_limit": 4,
+        "button_label": "Shop slitweaves",
+        "button_link": "shopify://collections/slitweaves",
+        "accent": "purple",
+        "flip": true,
+        "band": false,
+        "collection": "slitweaves"
+      }
+    },
+    "glow": {
+      "type": "neon-grid",
+      "settings": {
+        "eyebrow": "Glow",
+        "heading": "Gear that <em>glows</em>",
+        "text": "Hoods, hats, bags and body gems from the Flash Fashion shop.",
+        "products": [
+          "furry-unicorn-led-hood",
+          "furry-panda-led-hood",
+          "furry-reflective-led-hood",
+          "silver-iridescent-festival-captain-s-hat",
+          "rainbow-reflective-windbreaker-jacket",
+          "raging-rainbow-hydration-backpack",
+          "psychedelic-green-hydration-bag",
+          "glowglam-rave-gems",
+          "furry-led-boa",
+          "glowing-green-mini-backpack"
+        ],
+        "product_limit": 10,
+        "accent": "green"
+      }
+    },
+    "pasties": {
+      "type": "neon-banner",
+      "settings": {
+        "heading": "Hate wearing bras? <em>Try our pasties!</em>",
+        "button_label": "Shop pasties",
+        "button_link": "shopify://collections/pastease",
+        "accent": "pink"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "tiles",
+    "fans",
+    "slitweaves",
+    "glow",
+    "pasties"
+  ]
+}

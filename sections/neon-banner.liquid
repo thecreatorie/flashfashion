@@ -1,0 +1,21 @@
+<section class="nx nx-banner nx--{{ section.settings.accent }}">
+  <div class="nx-wrap">
+    <h2 class="nx-disp nx-rv">{{ section.settings.heading }}</h2>
+    {%- if section.settings.button_label != blank -%}
+      <a class="nx-btn nx-btn--p nx-rv" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Neon banner",
+  "settings": [
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "info": "Italic text glows in the accent color.", "default": "Hate wearing bras? <em>Try our pasties!</em>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop pasties" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "select", "id": "accent", "label": "Glow color", "options": [{ "value": "pink", "label": "Pink" }, { "value": "purple", "label": "Purple" }, { "value": "green", "label": "Green" }], "default": "pink" }
+  ],
+  "presets": [{ "name": "Neon banner" }]
+}
+{% endschema %}

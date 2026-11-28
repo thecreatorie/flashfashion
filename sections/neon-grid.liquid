@@ -1,0 +1,35 @@
+{%- liquid
+  assign nx_products = section.settings.products
+  if nx_products == blank or nx_products.size == 0
+    assign nx_products = section.settings.collection.products
+  endif
+-%}
+<section class="nx nx-sec nx-sec--line nx--{{ section.settings.accent }}" style="overflow:hidden">
+  <div class="nx-blob" style="width:480px;height:480px;background:#3dff7a;left:-200px;top:40px;opacity:.14"></div>
+  <div class="nx-wrap">
+    {%- if section.settings.eyebrow != blank -%}<p class="nx-eyebrow nx-rv">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    <h2 class="nx-disp nx-rv">{{ section.settings.heading }}</h2>
+    {%- if section.settings.text != blank -%}<p class="nx-sub nx-rv">{{ section.settings.text }}</p>{%- endif -%}
+    <div class="nx-grid">
+      {%- for product in nx_products limit: section.settings.product_limit -%}
+        {% render 'nx-card', product: product %}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Neon product grid",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Glow" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "info": "Italic text glows in the accent color.", "default": "Gear that <em>glows</em>" },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "product_list", "id": "products", "label": "Products", "limit": 20 },
+    { "type": "collection", "id": "collection", "label": "Or a collection", "info": "Used when no products are picked above." },
+    { "type": "range", "id": "product_limit", "min": 5, "max": 20, "step": 5, "label": "Products to show", "default": 10 },
+    { "type": "select", "id": "accent", "label": "Glow color", "options": [{ "value": "green", "label": "Green" }, { "value": "pink", "label": "Pink" }, { "value": "purple", "label": "Purple" }], "default": "green" }
+  ],
+  "presets": [{ "name": "Neon product grid" }]
+}
+{% endschema %}

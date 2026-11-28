@@ -1,0 +1,25 @@
+{
+  "settings_schema": {
+    "logo": {
+      "name": "Logo"
+    },
+    "colors": {
+      "name": "Colors"
+    },
+    "typography": {
+      "name": "Typography"
+    },
+    "layout": {
+      "name": "Layout"
+    },
+    "cart": {
+      "name": "Cart"
+    },
+    "product_cards": {
+      "name": "Product cards"
+    },
+    "social": {
+      "name": "Social"
+    }
+  }
+}
