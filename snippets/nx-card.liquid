@@ -13,6 +13,6 @@
   </div>
   <div class="nx-info">
     <p class="nx-name">{{ product.title }}</p>
-    <p class="nx-price">{% if product.price_varies %}From {% endif %}{{ product.price_min | money }}</p>
+    <p class="nx-price">{% if product.price_varies %}From {% endif %}{{ product.price_min | money }}{% if product.compare_at_price_min > product.price_min %} <s class="nx-was">{{ product.compare_at_price_min | money }}</s>{% endif %}</p>
   </div>
 </a>

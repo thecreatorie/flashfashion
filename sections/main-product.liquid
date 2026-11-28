@@ -98,6 +98,11 @@
                 <p class="made-to-order">Made to order. Usually ready in 2&ndash;4 weeks, depending on your selections.</p>
               {%- endif -%}
 
+              {%- assign sale_today = 'now' | date: '%Y%m%d' | plus: 0 -%}
+              {%- assign sale_v = product.selected_or_first_available_variant -%}
+              {%- if product.tags contains 'last-call' and sale_v.compare_at_price > sale_v.price and sale_today <= 20261231 -%}
+                <p class="sale-note"><strong>Holiday sale.</strong> This price runs through December 31. Regular price is {{ sale_v.compare_at_price | money }}.</p>
+              {%- endif -%}
               {%- if product.tags contains 'last-call' -%}
                 <p class="last-call"><strong>Last call.</strong> Final stock, no restocks. Once it's gone, it's gone.</p>
               {%- endif -%}

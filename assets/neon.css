@@ -200,3 +200,9 @@ input:not([type='checkbox']):not([type='radio']):focus, select:focus, textarea:f
 .badge--lastcall, .nx-tag--last { background: var(--nx-p); color: #fff; box-shadow: 0 0 16px rgba(255, 46, 155, .6); }
 .last-call { margin: 18px 0 0; padding: 12px 16px; border: 1px solid var(--nx-p); border-radius: 12px; font-size: .9rem; color: #ffd9ec; box-shadow: 0 0 18px rgba(255, 46, 155, .25); }
 .last-call + .low-stock { margin-top: 12px; }
+
+/* Sale: struck regular price and the sale note */
+.nx-was { margin-left: 6px; font-weight: 400; font-size: .85em; color: #8b8b9c; text-shadow: none; }
+.product-info__price s { margin-left: 10px; color: #8b8b9c; font-weight: 400; font-size: .75em; }
+.sale-note { margin: 18px 0 0; padding: 12px 16px; border: 1px solid var(--nx-g); border-radius: 12px; font-size: .9rem; color: #e6ffd2; box-shadow: 0 0 18px rgba(148, 251, 74, .22); }
+.sale-note + .last-call { margin-top: 12px; }
