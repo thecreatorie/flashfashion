@@ -98,6 +98,9 @@
                 <p class="made-to-order">Made to order. Usually ready in 2&ndash;4 weeks, depending on your selections.</p>
               {%- endif -%}
 
+              {%- if product.tags contains 'last-call' -%}
+                <p class="last-call"><strong>Last call.</strong> Final stock, no restocks. Once it's gone, it's gone.</p>
+              {%- endif -%}
               {%- unless product.tags contains 'made-to-order' -%}
                 {%- assign cv = product.selected_or_first_available_variant -%}
                 {%- assign cv_low = false -%}

@@ -34,6 +34,9 @@
       {%- if product.tags contains 'new' -%}
         <span class="badge badge--new">New</span>
       {%- endif -%}
+      {%- if product.available and product.tags contains 'last-call' -%}
+        <span class="badge badge--lastcall">Last call</span>
+      {%- endif -%}
       {%- unless product.available -%}
         <span class="badge badge--soldout">Sold out</span>
       {%- endunless -%}

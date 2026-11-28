@@ -195,3 +195,8 @@ input:not([type='checkbox']):not([type='radio']):focus, select:focus, textarea:f
 /* Low-stock note above the buy button */
 .low-stock { margin: 16px 0 0; font-size: .88rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--nx-p); text-shadow: 0 0 14px rgba(255, 46, 155, .55); }
 .low-stock[hidden] { display: none; }
+
+/* Last call: final stock, no restocks */
+.badge--lastcall, .nx-tag--last { background: var(--nx-p); color: #fff; box-shadow: 0 0 16px rgba(255, 46, 155, .6); }
+.last-call { margin: 18px 0 0; padding: 12px 16px; border: 1px solid var(--nx-p); border-radius: 12px; font-size: .9rem; color: #ffd9ec; box-shadow: 0 0 18px rgba(255, 46, 155, .25); }
+.last-call + .low-stock { margin-top: 12px; }

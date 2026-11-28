@@ -147,7 +147,7 @@
       "settings": {
         "eyebrow": "Glow",
         "heading": "Gear that <em>glows</em>",
-        "text": "Hoods, hats, bags and jackets from the Flash Fashion shop.",
+        "text": "Hoods, hats, bags and jackets. Final stock, no restocks: once it's gone, it's gone.",
         "products": [
           "furry-unicorn-led-hood",
           "furry-panda-led-hood",
@@ -178,7 +178,7 @@
       "settings": {
         "eyebrow": "Wear",
         "heading": "Festival <em>fits</em>",
-        "text": "Dresses, sets and layers. In stock and ready to ship.",
+        "text": "Dresses, sets and layers. Final stock, no restocks: once it's gone, it's gone.",
         "products": [
           "black-latex-bodycon-dress",
           "neon-orange-cowgirl-set",

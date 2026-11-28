@@ -9,7 +9,7 @@
     {%- else -%}
       {{ 'product-1' | placeholder_svg_tag }}
     {%- endif -%}
-    {%- unless product.available -%}<span class="nx-tag">Sold out</span>{%- endunless -%}
+    {%- unless product.available -%}<span class="nx-tag">Sold out</span>{%- elsif product.tags contains 'last-call' -%}<span class="nx-tag nx-tag--last">Last call</span>{%- endunless -%}
   </div>
   <div class="nx-info">
     <p class="nx-name">{{ product.title }}</p>
